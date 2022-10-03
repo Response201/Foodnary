@@ -1,0 +1,36 @@
+.IconAndText___Container {
+  max-width: 800px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-left: 0px;
+}
+
+.IconAndText___Content {
+  height: 30%;
+  width: 30%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--primary-one);
+  border-radius: 5px;
+  padding: 0.5%;
+
+  p {
+    font-size: clamp(10px, 1vw, 15px);
+    padding: 0;
+    margin: 0;
+    font-weight: 800;
+  }
+  i {
+    font-size: clamp(35px, 1vw, 45px);
+  }
+}
+
+@media (min-width: 768px) {
+  .IconAndText___Container {
+    justify-content: space-between;
+    margin-left: 5px;
+  }
+}

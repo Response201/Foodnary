@@ -1,0 +1,40 @@
+.con {
+  padding-top: clamp(0.2em, 5vw, 0em);
+  
+}
+
+.switch input {
+  position: absolute;
+  opacity: 0;
+}
+
+/**
+ * 1. Adjust this to size
+ */
+
+.switch {
+  display: inline-block;
+  font-size: clamp(15px, 2vw, 20px); /* 1 */
+  height: 1em;
+  width: 2.3em;
+  background: var(--primary-one);
+  border-radius: 1em;
+  padding: 0.2em;
+}
+
+.switch div {
+  height: 100%;
+  width: 45%;
+  border-radius: 50%;
+  background: var(--pink);
+  box-shadow: 0 0.1em 0.3em rgba(0, 0, 0, 0.3);
+  -webkit-transition: all 500ms;
+  -moz-transition: all 500ms;
+  transition: all 500ms;
+}
+
+.switch input:checked + div {
+  -webkit-transform: translate3d(120%, 0, 0);
+  -moz-transform: translate3d(120%, 0, 0);
+  transform: translate3d(120%, 0, 0);
+}

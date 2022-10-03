@@ -1,0 +1,22 @@
+.userProfile___container {
+  padding: 0 10px 10px 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.userProfile___header_btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  h2 {
+    margin-right: 55px;
+    font-size: 3em;
+  }
+
+  button {
+    font-size: 1.8em;
+    margin-top: 0.8em;
+  }
+}

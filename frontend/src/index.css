@@ -1,0 +1,83 @@
+body {
+  margin: 0 auto;
+  padding: 0 auto;
+  overflow: hidden;
+
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: var(--primary-two);
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+    monospace;
+}
+
+:root {
+  --dark-green: rgb(59, 76, 33);
+  --green: rgb(27, 100, 50);
+  --green-op: rgba(119, 155, 65, 0.5);
+  --star: rgb(249, 249, 167);
+  --primary-one: rgba(112, 122, 95, 0.5);
+  --primary-two: rgb(249, 246, 242);
+  --secondary-one: rgba(250, 179, 108, 0.446);
+  --secondary-two: rgba(251, 209, 119, 0.359);
+  --input: rgba(214, 221, 202, 0.5);
+  --input-focus: rgba(190, 199, 175, 0.5);
+  --message-error: rgba(183, 160, 159, 0.5);
+
+  --dark-red: rgb(186, 32, 37);
+  --pink: rgb(237, 26, 89);
+  --shadow: rgba(59, 65, 49, 0.5);
+
+  --text-primary: rgb(255, 255, 255);
+  --text-secondary: rgb(60, 66, 51);
+
+  --text-links: rgb(216, 146, 159);
+  --navDevider: rgba(242, 194, 209, 0.5);
+  --icon-nav: rgb(255, 255, 255);
+}
+
+.dark {
+  --primary-one: rgba(223, 244, 188, 0.5);
+  --primary-two: rgb(47, 47, 47);
+  --input: rgba(159, 175, 133, 0.9);
+  --input-focus: rgba(159, 175, 133, 0.9);
+  --message-error: rgba(175, 140, 133, 0.5);
+  --star: rgb(231, 231, 28);
+  --dark-red: rgb(131, 26, 29);
+  --pink: rgb(204, 28, 75);
+  --shadow: rgba(26, 26, 26, 0.548);
+
+  --text-primary: rgb(249, 246, 242);
+  --text-links: rgb(147, 76, 79);
+  --navDevider: rgba(29, 4, 10, 0.373);
+  --icon-nav: rgba(233, 255, 197, 0.583);
+}
+
+/* General Stryling */
+
+.general_button {
+  margin: 10px 0;
+  width: 100%;
+  min-width: 70px;
+  height: 100%;
+  min-height: 40px;
+  background-color: var(--primary-one);
+  border: none;
+  font-size: clamp(14px, 4vw, 25px);
+  color: var(--text-primary);
+  border-radius: 10px 0;
+  border: 5px double var(--primary-two);
+  text-shadow: 1px 1px 1px rgb(53, 53, 53);
+  box-shadow: inset 0.2px 0.2px 3px var(--shadow),
+    inset -1px -1px 2px var(--primary-two);
+}
+.general_button:hover {
+  transform: scale(105%) rotate(-2deg);
+  box-shadow: inset 0.2px 0.2px 2px var(--shadow),
+    inset -1px -1px 1px var(--primary-two);
+}

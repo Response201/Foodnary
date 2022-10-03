@@ -1,0 +1,94 @@
+
+
+// Exciting Part
+// ====================
+.ratingControl {
+  position: relative;
+  display: inline-flex;
+  direction: rtl;
+  padding-right: 5px;
+   
+
+  .ratingControl__radio {
+    position: absolute;
+    height: 0;
+    width: 0;
+    opacity: 0;
+  }
+
+  .ratingControl__star{
+    position: relative;
+    display: block;
+    height: 25px;
+    width:13px;
+    cursor: pointer;
+    overflow: hidden;
+
+    &:nth-last-of-type(odd) {
+      &::before,
+      &::after{
+        left: 0;
+        clip-path: polygon(50% 0%, 50% 70%, 21% 91%, 32% 55%, 2% 35%, 39% 35%);
+        
+      }
+    }
+
+    &:nth-last-of-type(even) {
+      &::before,
+      &::after {
+        right: 0;
+       clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%); 
+       
+      }
+    }
+
+    &::before,
+    &::after {
+      content: "";
+      position: absolute;
+      top: 0;
+      height: 100%;
+    }
+
+    &::before {
+      width: 200%;
+      background-color:var(--primary-one);
+     
+    }
+
+    &::after {
+      background-color: var(--star);
+      
+    }
+     &::after{
+    background-color: var(--star);
+    
+  }
+  }
+}
+ 
+
+  .ratingControl__star:hover::after,
+  .ratingControl__star:hover ~ .ratingControl__star::after,
+  .ratingControl__radio:checked ~ .ratingControl__star::after {
+    width: 200%;
+    
+  }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  

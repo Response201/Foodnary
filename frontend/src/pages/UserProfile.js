@@ -49,14 +49,22 @@ export const UserProfile = () => {
               : "profil_grid___Content"
           }
         >
-          {data &&
+          {data && data.length >= 1 ? (
             data.map((item) => {
               return (
                 <div key={item._id}>
                   <RecipeLayout item={item} setUrl={setUrl} />{" "}
                 </div>
               );
-            })}
+            })
+          ) : (
+            <>
+              {" "}
+              <p>
+                {data ? "This user have not created any foodanrys yet" : ""}
+              </p>{" "}
+            </>
+          )}
         </section>
       </section>
     </div>

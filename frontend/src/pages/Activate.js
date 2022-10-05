@@ -2,7 +2,6 @@ import React, { useState, useEffect } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import { batch, useDispatch } from "react-redux";
 
-
 export const Activate = () => {
   const navigate = useNavigate();
   const dispatch = useDispatch();
@@ -33,7 +32,7 @@ export const Activate = () => {
 
         setTimeout(() => {
           navigate("/signin");
-        }, 3000);
+        }, 10000);
       });
   }, [token, dispatch, navigate]);
 

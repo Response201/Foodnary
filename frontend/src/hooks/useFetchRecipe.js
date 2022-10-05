@@ -6,7 +6,7 @@ import { ui } from "../reducers/ui";
 export const useFetchRecipe = ({ url }) => {
   const [data, setData] = useState(null);
   const [next, setNext] = useState(false);
-  const [urlUpload, setUrlUpload] = useState('')
+  const [urlUpload, setUrlUpload] = useState("");
   const token = useSelector((store) => store.user.token);
   const username = useSelector((store) => store.user.username);
   const role = useSelector((store) => store.user.role);
@@ -23,36 +23,30 @@ export const useFetchRecipe = ({ url }) => {
   const seeProfile = useSelector((store) => store.ui.seeProfile);
   const dispatch = useDispatch();
 
-
-
-
   useEffect(() => {
-
     const fetchData = async ({ options }) => {
       try {
         /* if next=true  loading is never set to tru - sidan uppdateras utan att vyn ändras när användare gillar inlägg  */
 
-        if(next || update){
+        if (next || update) {
           const response = await fetch(url, options);
           const json = await response.json();
           dispatch(ui.actions.setLoading(false));
           setData(json);
           dispatch(ui.actions.setUpdate(false));
-         
-        } else { 
+        } else {
           dispatch(ui.actions.setLoading(true));
           const response = await fetch(url, options);
           const json = await response.json();
           dispatch(ui.actions.setLoading(false));
           setData(json);
-          if(json.response._id){
-        dispatch(recipes.actions.setId(json.response._id))
-        dispatch(recipes.actions.setUploadFile(true))
+          if (json.response._id) {
+            dispatch(recipes.actions.setId(json.response._id));
+            dispatch(recipes.actions.setUploadFile(true));
+          }
         }
-}
-        
       } catch (error) {
-        dispatch(ui.actions.setUpdate(false))
+        dispatch(ui.actions.setUpdate(false));
         setNext(false);
         dispatch(ui.actions.setLoading(false));
         dispatch(ui.actions.setMessage(error.message));
@@ -60,30 +54,16 @@ export const useFetchRecipe = ({ url }) => {
     };
 
     const fetchLike = async ({ options }) => {
-     
       try {
-    
         const response = await fetch(url, options);
         const json = await response.json();
         setNext(true);
         dispatch(ui.actions.setUpdate(true));
-
-        
-        
-          
       } catch (error) {
         dispatch(ui.actions.setMessage(error.message));
-        setNext(false)
+        setNext(false);
       }
     };
-
-
-
-
-
-
-
-
 
     if (url.includes("userRecipe") && path === "profile") {
       const options = {
@@ -111,20 +91,15 @@ export const useFetchRecipe = ({ url }) => {
       fetchData({ options });
     }
 
-
-if(url.includes("allRecipes")){
-
-  const options = {
-    method: "GET",
-    headers: {
-      "Content-Type": "application/json"
+    if (url.includes("allRecipes")) {
+      const options = {
+        method: "GET",
+        headers: {
+          "Content-Type": "application/json"
+        }
+      };
+      fetchData({ options });
     }
-  };
-  fetchData({ options });
-
-
-}
-
 
     if (url.includes("newestRecipes") || next) {
       const options = {
@@ -222,35 +197,24 @@ if(url.includes("allRecipes")){
       fetchLike({ options });
     }
 
+    if (url.includes("ratingRecipe") && token) {
+      const options = {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          Authorization: `Bearer ${token}`
+        },
+        body: JSON.stringify({
+          username: username,
+          value: value
+        })
+      };
+      setNext(true);
+      dispatch(ui.actions.setUpdate(true));
+      fetchLike({ options });
+    }
 
-    
-
-if(url.includes("ratingRecipe") && token){
-
-  const options = {
-    method: "POST",
-    headers: {
-      "Content-Type": "application/json",
-      Authorization: `Bearer ${token}`
-    },
-    body: JSON.stringify({
-      username: username,
-      value: value
-    })
-  };
-  setNext(true)
-  dispatch(ui.actions.setUpdate(true));
-  fetchLike({ options });
-}
-
-
-
-
-
-
-
-
-    if(url.includes('oneRecipe')) {
+    if (url.includes("oneRecipe")) {
       const options = {
         method: "POST",
         headers: {
@@ -260,27 +224,10 @@ if(url.includes("ratingRecipe") && token){
           id: id
         })
       };
-     
+
       fetchData({ options });
     }
-    
-    
-    
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-  }, [url, token, dispatch, urlUpload]);
+  }, [url, token, dispatch, urlUpload, id]);
 
   return { data, next };
 };

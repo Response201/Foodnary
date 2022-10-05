@@ -1,9 +1,10 @@
 import React from 'react'
 import './welcomePage.scss'
 import dinner from '../assets/video/dinner.mp4'
-import food from '../assets/image/welcome.jpg'
-export const WelcomePage = ({setShowWelcomePage}) => {
-
+import { useDispatch } from 'react-redux'
+import { ui } from '../reducers/ui'
+export const WelcomePage = () => {
+const dispatch = useDispatch()
 
 
   return (
@@ -11,7 +12,7 @@ export const WelcomePage = ({setShowWelcomePage}) => {
     <article className='WelcomPage__container'>
       
       
-      <button className='WelcomPage__btn_close' onClick={() => setShowWelcomePage(false)}>X</button>
+      <button className='WelcomPage__btn_close' onClick={() =>  dispatch(ui.actions.setShowWelcomePage(false))}>X</button>
       <section className='WelcomPage__text_container'> 
       <section className='WelcomPage__text'> 
       

@@ -1,3 +1,4 @@
+/*eslint-disable */
 import React, { useState, useCallback } from "react";
 import Cropper from "react-easy-crop";
 import "./TestImg.scss";

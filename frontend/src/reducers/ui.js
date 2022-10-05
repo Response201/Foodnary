@@ -11,7 +11,8 @@ export const ui = createSlice({
     seeProfile:'',
     setSeeProfile_id:'',
     path:'',
-    update:false
+    update:false,
+    showWelcomePage: true,
   },
   reducers: {
     setLoading: (state, action) => {
@@ -46,6 +47,9 @@ state.next = action.payload;
     },
     setUpdate: (state, action) => {
       state.update = action.payload;
+    },
+    setShowWelcomePage: (state, action) => {
+      state.showWelcomePage = action.payload;
     },
 
   }

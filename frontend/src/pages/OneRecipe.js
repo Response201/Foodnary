@@ -31,22 +31,11 @@ export const OneRecipe = () => {
     navigate("/user");
   };
 
-
-
-
-
-
-
-
-
-
-
-
   useEffect(() => {
     if (update) {
       setnext(true);
     }
-  }, [update]);
+  }, [update, recipeId]);
 
   useEffect(() => {
     if (url !== "") {
@@ -66,15 +55,13 @@ export const OneRecipe = () => {
         <section className="oneRecipe___content">
           <section className="oneRecipe___titel_category">
             <h2> {data.title} </h2>
-            <section className="oneRecipe___pencil_category"> 
-            <div className="oneRecipe_ingredients_div___category">
-              <p className="oneRecipe_mainCategory"> {data.mainCategory} </p>
-              <p className="oneRecipe_subCatergory"> {data.subCatergory} </p>
+            <section className="oneRecipe___pencil_category">
+              <div className="oneRecipe_ingredients_div___category">
+                <p className="oneRecipe_mainCategory"> {data.mainCategory} </p>
+                <p className="oneRecipe_subCatergory"> {data.subCatergory} </p>
               </div>
-           <GetChangeRecipe data={data}  />
-          
+              <GetChangeRecipe data={data} />
             </section>
-            
           </section>
           <section className="oneRecipe_recipe___img">
             <section className="oneRecipe___username_likes_container">

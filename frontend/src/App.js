@@ -1,15 +1,17 @@
+/*eslint-disable */
 import "./App.css";
-import React, { useEffect, useState } from "react";
+import React, { useEffect } from "react";
 import { Navbar } from "./feature/Navbar";
 import { PageRoutes } from "./PageRoutes";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import "./App.css"
 import { WelcomePage } from "./pages/WelcomePage";
+import { ui } from "./reducers/ui";
 
 export const App = () => {
+const dispatch = useDispatch()
 
-const [showWelcomePage, setShowWelcomePage] = useState(true)
-
+const showWelcomePage = useSelector((store) => store.ui.showWelcomePage);
   const themes = useSelector((store) => store.ui.theme);
   React.useEffect(() => {
     document.documentElement.className = themes;
@@ -18,7 +20,8 @@ const [showWelcomePage, setShowWelcomePage] = useState(true)
 useEffect(() => {
    
   setTimeout(() => {
-    setShowWelcomePage(false)
+    dispatch(ui.actions.setShowWelcomePage(false));
+
   },5000); 
  
 }, [])
@@ -32,7 +35,7 @@ useEffect(() => {
     <article body={themes} section className="appContainer" >
       <section className="navContainer">
         <Navbar />
-        {showWelcomePage && <WelcomePage setShowWelcomePage={setShowWelcomePage} />}
+        {showWelcomePage && <WelcomePage  />}
         
         
       </section>

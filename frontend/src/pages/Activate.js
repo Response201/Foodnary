@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import { batch, useDispatch } from "react-redux";
+import { ui } from "../reducers/ui";
 
 export const Activate = () => {
   const navigate = useNavigate();
@@ -9,6 +10,8 @@ export const Activate = () => {
   const { token } = useParams();
 
   useEffect(() => {
+    dispatch(ui.actions.setShowWelcomePage(false));
+
     const options = {
       method: "POST",
       headers: {
@@ -32,7 +35,7 @@ export const Activate = () => {
 
         setTimeout(() => {
           navigate("/signin");
-        }, 10000);
+        }, 5000);
       });
   }, [token, dispatch, navigate]);
 

@@ -1,7 +1,6 @@
 import React, { useEffect, useRef, useState } from "react";
 import { useFetchRecipe } from "../hooks/useFetchRecipe";
-import { useSelector } from "react-redux";
-import { Loading } from "../feature/Loading";
+
 import { RecipeLayout } from "../components/RecipeLayout";
 
 import { Parallax, ParallaxLayer } from "@react-spring/parallax";

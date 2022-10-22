@@ -3,14 +3,16 @@
   flex-direction: column;
   align-items: center;
   text-align: center;
-  height: 95vh;
-  .headerText {
-    font-size: clamp(35px, 5vw, 75px);
-    color: var(--primary-one);
-    margin: 0;
-    padding: 0px 0 20px 0;
-    text-shadow: 1px 2px 2px var(--shadow);
-  }
+  scrollbar-width: none;
+}
+.home___container::-webkit-scrollbar {
+  display: none; /* for Chrome, Safari, and Opera */
+}
+div {
+  scrollbar-width: none;
+}
+div::-webkit-scrollbar {
+  display: none; /* for Chrome, Safari, and Opera */
 }
 
 .recipe___Container {
@@ -25,41 +27,82 @@
   scrollbar-width: none;
 }
 
- .recipe___Container::-webkit-scrollbar {
+.recipe___Container::-webkit-scrollbar {
   display: none; /* for Chrome, Safari, and Opera */
 }
 
-.recipe___Conent {
-  display: grid;
-  grid-template-columns: repeat(1, minmax(250px, 1fr));
-  gap: 10px;
-  margin-bottom: 50px;
+/* HEADER */
+
+.headerText {
+  font-size: clamp(35px, 5vw, 75px);
+  color: var(--primary-one);
+  margin: 0;
+  padding: 0px 0 20px 0;
+  text-shadow: 1px 2px 2px var(--shadow);
 }
 
-@media (min-width: 768px) {
-  .home___container {
-    .headerText {
-      padding: 20px;
-    }
-  }
-  .recipe___Conent {
-    gap: 10px;
-    padding: 0px 10px;
-    grid-template-columns: repeat(2, minmax(350px, 1fr));
-   
-  }
+.header_container {
+  background-color: var(--primary-one-solid);
 }
 
-@media (min-width: 1024px) {
-  .home___container {
-    .headerText {
-      padding: 0 0 25px 0;
-    }
-  }
+.Header___text_container {
+  height: 100vh;
+  min-height: 500px;
+  width: 100vw;
+  position: absolute;
+}
 
-  .recipe___Conent {
-    gap: 15px;
-    padding: 0px 15px;
-    grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
+.Gif___farmer_text {
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+}
+
+/* MAIN */
+
+.main_container {
+  min-height: 500px;
+  height: 100%;
+  width: 100%;
+  background-color: var(--primary-two);
+}
+
+.main_recipe_content {
+  min-height: 300px;
+  height: 25%;
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  gap: 5px;
+
+}
+.recipe_div {
+
+  height: 95%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.recipe_div_image {
+  height: 90%;
+  max-height: 400px;
+  width: 50%;
+  max-width: 450px;
+  overflow-y: hidden;
+  z-index: 10;
+
+  border-radius: 5px;
+}
+
+.recipe_div_image:last-child {
+  display: none;
+}
+
+@media (min-width: 758px) {
+  .recipe_div_image:last-child {
+    display: flex;
   }
 }

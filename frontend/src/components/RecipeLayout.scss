@@ -17,10 +17,10 @@
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
-  height: clamp(45px, 4vw, 65px);
+  height: clamp(45px, 4vw, 55px);
   font-size: 20px;
   .recipe___title_h2 {
-    font-size: 0.85em;
+    font-size: 0.7em;
     display: inline;
     margin-right: 10px;
   }
@@ -28,6 +28,7 @@
   .star {
     color: var(--primary-two);
     font-size: 0.5em;
+    margin-top: 0.1em;
   }
 
   .recipe___title_rating_container {
@@ -35,6 +36,10 @@
     flex-direction: row;
     justify-content: flex-start;
     align-items: center;
+    p {
+      font-size: 0.6em;
+      font-weight: 600;
+    }
   }
 
   .icon_pencil {
@@ -98,14 +103,13 @@
     flex-direction: row;
     justify-content: flex-end;
     align-items: center;
-   
 
     .likeBtn_likeCount {
       display: flex;
       justify-content: flex-end;
       align-items: center;
       align-content: center;
-     
+
       width: clamp(23px, 2vw, 28px);
     }
 
@@ -119,20 +123,14 @@
       color: var(--text-primary);
       text-shadow: 1px 1px 1px rgb(53, 53, 53);
       box-shadow: inset 0.2px 0.2px 3px var(--shadow);
-      
-      
 
       .icon_heart {
-       font-size: large;
+        font-size: clamp(15px, 2vw, 20px);
         display: flex;
         justify-content: center;
         align-items: center;
-      
-        aspect-ratio: 1 / 0.95;
-       
-     
 
-       
+        aspect-ratio: 1 / 0.95;
       }
     }
 

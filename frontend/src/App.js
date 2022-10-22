@@ -32,7 +32,7 @@ useEffect(() => {
 
 
   return (
-    <article body={themes} section className="appContainer" >
+    <article body={themes} section className="appContainer" >     
       <section className="navContainer">
         <Navbar />
         {showWelcomePage && <WelcomePage  />}
@@ -42,6 +42,7 @@ useEffect(() => {
       <section className="pageContainer"> 
       <PageRoutes />
       </section>
+
     </article>
   );
 };

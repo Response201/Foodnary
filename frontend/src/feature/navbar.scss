@@ -3,6 +3,7 @@
   display: flex;
   justify-content: space-between;
   position: absolute;
+  background-color: var(--primary-two);
   top: 0;
   z-index: 100;
 
@@ -20,7 +21,7 @@
       border: 5px double var(--primary-two);
       border-radius: 15px 0;
       background-color: var(--primary-one);
-      padding: 1px 4px 2px 1px;
+      padding: 1px 4px 2px 4px;
       text-decoration: none;
       font-size: clamp(10px, 3vh, 22px);
       font-weight: 500;

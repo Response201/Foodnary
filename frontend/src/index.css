@@ -24,6 +24,7 @@ code {
   --primary-one: rgba(112, 122, 95, 0.5);
   --primary-one-solid: rgb(187, 196, 171);
   --primary-two: rgb(249, 246, 242);
+  --primary-two-hollow: rgba(48, 48, 48, 0.6);
   --secondary-one: rgba(250, 179, 108, 0.446);
   --secondary-two: rgba(251, 209, 119, 0.359);
   --input: rgba(214, 221, 202, 0.5);
@@ -36,6 +37,7 @@ code {
 
   --text-primary: rgb(255, 255, 255);
   --text-secondary: rgb(60, 66, 51);
+  --text-change:rgb(249, 246, 242);
 
   --text-links: rgb(216, 146, 159);
   --navDevider: rgba(242, 194, 209, 0.5);
@@ -46,6 +48,7 @@ code {
   --primary-one: rgba(223, 244, 188, 0.5);
   --primary-one-solid:rgb(91, 96, 81);
   --primary-two: rgb(47, 47, 47);
+  --primary-two-hollow: rgba(39, 39, 39, 0.781);
   --input: rgba(159, 175, 133, 0.9);
   --input-focus: rgba(159, 175, 133, 0.9);
   --message-error: rgba(175, 140, 133, 0.5);
@@ -55,6 +58,7 @@ code {
   --shadow: rgba(26, 26, 26, 0.548);
 
   --text-primary: rgb(249, 246, 242);
+  --text-change:rgb(192, 191, 191);
   --text-links: rgb(147, 76, 79);
   --navDevider: rgba(29, 4, 10, 0.373);
   --icon-nav: rgba(233, 255, 197, 0.583);

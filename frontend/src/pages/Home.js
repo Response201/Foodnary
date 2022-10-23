@@ -26,8 +26,7 @@ export const Home = () => {
         <Parallax pages={3} style={{ top: "0", left: "0" }}>
           <ParallaxLayer
             className="header_container"
-            offset={0}
-            factor={1 / 1.2}
+            factor={1}
             speed={-0.1}
             style={{
               display: "flex",
@@ -36,28 +35,38 @@ export const Home = () => {
           >
             <HomeText />
           </ParallaxLayer>
-          <ParallaxLayer speed={1} factor={1.6} offset={0.8}>
-            <article className="main_container">
-              <h2>Insparation</h2>
-              <section className="main_recipe_content" style={{ zIndex: "10" }}>
-                {data &&
-                  data.map((item) => {
-                    return (
-                      <div className="recipe_div_image" key={item._id}>
-                        <RecipeLayout item={item} />
-                      </div>
-                    );
-                  })}
+          <ParallaxLayer speed={1} factor={1 / 1.2} offset={1.5}>
+            <article
+              className="main_container"
+              style={{
+                background: `url("https://source.unsplash.com/XbsuXjgN50Y")`,
+                backgroundSize: "cover",
+                backgroundRepeat: "no-repeat",
+                zIndex: "10"
+              }}
+            >
+              <section className="main_content">
+                <h2 className="main_insparation_header">Insparation</h2>
+                <div className="main_recipe_content" style={{ zIndex: "10" }}>
+                  {data &&
+                    data.map((item) => {
+                      return (
+                        <div className="recipe_div_image" key={item._id}>
+                          <RecipeLayout item={item} />
+                        </div>
+                      );
+                    })}
+                </div>
               </section>
             </article>
           </ParallaxLayer>
 
           <ParallaxLayer
-            speed={5}
+            speed={-15}
             factor={0.1}
-            offset={0}
-            sticky={{ start: 1.1, end: 0.1 }}
-            style={{}}
+            offset={0.9}
+            sticky={{ start: 0.9, end: 0.9 }}
+            style={{ height: "100px" }}
           >
             <section className="Gif___farmer_text">
               <iframe
@@ -76,18 +85,15 @@ export const Home = () => {
 
           <ParallaxLayer
             speed={1}
-            factor={2}
-            offset={1.35}
-            style={{
-              background: `url("https://source.unsplash.com/FDO_EjrAk9c")`,
-              backgroundSize: "cover"
-            }}
+            factor={1.5}
+            offset={0.8}
+            className="about_container_pageText"
           />
 
           <ParallaxLayer
             offset={2}
             speed={1}
-            style={{ backgroundColor: "grey" }}
+            style={{ backgroundColor: "white" }}
           />
         </Parallax>
       }

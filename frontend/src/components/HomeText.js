@@ -23,21 +23,31 @@ const HomeText = () => {
   const [valueY, setvalueY] = useState(0);
 
   useEffect(() => {
-    setvalueX((4 * x) / 170 + 600);
-    setvalueY((4 * y) / 170 + 620);
+    setvalueX((4 * x) / 170 - 10);
+    setvalueY((4 * y) / 170 + 40);
   }, [x, y]);
 
   return (
     <div className="mouseArea" onMouseMove={handleMouseMove}>
       <div
-        className="title"
+        className="background"
         style={{ backgroundPositionX: valueX, backgroundPositionY: valueY }}
       >
-        Foodnary 
+     
        
         
       </div>
-      <div className="title_shadow">Foodnary</div>
+      <div
+        className="title"
+        
+      >
+       <h2>  Foodnary </h2>
+        <p> All your favorite meals!</p>
+        <p>____________</p>
+       
+        
+      </div>
+     
  
     </div>
   );

@@ -91,7 +91,7 @@ export const useFetchRecipe = ({ url }) => {
       fetchData({ options });
     }
 
-    if (url.includes("allRecipes")) {
+    if (url.includes("allRecipes") || url.includes("threenewestRecipes")) {
       const options = {
         method: "GET",
         headers: {
@@ -139,7 +139,8 @@ export const useFetchRecipe = ({ url }) => {
     }
 
     if (
-      url.includes("createRecipe") || url.includes("changeRecipe") && token
+      url.includes("createRecipe") ||
+      url.includes("changeRecipe") && token
     ) {
       const options = {
         method: "POST",

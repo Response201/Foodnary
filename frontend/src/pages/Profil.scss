@@ -148,7 +148,13 @@
       text-decoration: underline;
       transform: none;
       box-shadow: none;
-    }    
+    } 
+    
+    .profil_grid___Container,
+  .oneRecipteWidth_container {
+    grid-row: 3/12;
+    grid-column: 1/9;
+  }
 
 }
 

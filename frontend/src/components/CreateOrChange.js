@@ -78,8 +78,10 @@ export const CreateOrChange = () => {
       if (getHeader === "Create recipe" && next) {
         setUrl(`${process.env.REACT_APP_URL}/createRecipe`);
         dispatch(recipes.actions.setUploadFile(true));
-        setSubmit(true);
         dispatch(recipes.actions.setUploadFile(false));
+        setTimeout(() => {
+          navigate("/profile");
+        }, 5000);
       } else if (getHeader === "Create recipe" && !next) {
         dispatch(recipes.actions.setImage(defaultImgRecip));
         setUrl(`${process.env.REACT_APP_URL}/createRecipe`);

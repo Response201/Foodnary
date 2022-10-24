@@ -139,8 +139,7 @@ export const useFetchRecipe = ({ url }) => {
     }
 
     if (
-      url.includes("createRecipe") ||
-      (url.includes("changeRecipe") && token)
+      url.includes("createRecipe") || url.includes("changeRecipe") && token
     ) {
       const options = {
         method: "POST",
@@ -227,7 +226,7 @@ export const useFetchRecipe = ({ url }) => {
 
       fetchData({ options });
     }
-  }, [url, token, dispatch, urlUpload, id]);
+  }, [url, token, urlUpload]);
 
   return { data, next };
 };

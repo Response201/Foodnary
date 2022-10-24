@@ -1,7 +1,6 @@
 /*eslint-disable */
 import React, { useEffect, useState } from "react";
 import { HiHeart } from "react-icons/hi";
-import { useFetchRecipe } from "../hooks/useFetchRecipe";
 import { Loading } from "../feature/Loading";
 import { useDispatch, useSelector } from "react-redux";
 import RatingStar from "../feature/RatingStar";
@@ -10,6 +9,7 @@ import { SetRatingStar } from "../feature/SetRatingStar";
 import { useNavigate } from "react-router";
 import { ui } from "../reducers/ui";
 import GetChangeRecipe from "../feature/GetChangeRecipe";
+import { useFetchRecipe } from "../hooks/useFetchOneRecipe";
 
 export const OneRecipe = () => {
   const loading = useSelector((store) => store.ui.loading);

@@ -12,17 +12,11 @@ export const Search = () => {
   const navigate = useNavigate();
   const dispatch = useDispatch();
 
-
-
-
   useEffect(() => {
     fetch(`${process.env.REACT_APP_URL}/allRecipes`)
       .then((response) => response.json())
       .then((data) => setAllRecipes(data));
-      
   }, []);
-
-  
 
   useEffect(() => {
     setOutput([]);

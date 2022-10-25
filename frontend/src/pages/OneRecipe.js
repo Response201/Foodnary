@@ -21,7 +21,7 @@ export const OneRecipe = () => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
   const update = useSelector((store) => store.ui.update);
-
+  const updateRating = useSelector((store) => store.recipes.rating);
   const role = useSelector((store) => store.user.role);
 
   /* funkction to get to an userpage */
@@ -46,7 +46,7 @@ export const OneRecipe = () => {
     if (url === "" && recipeId) {
       setUrl(`${process.env.REACT_APP_URL}/oneRecipe`);
     }
-  }, [recipeId, next]);
+  }, [recipeId, next, updateRating]);
 
   return (
     <article className="oneRecipe___container">

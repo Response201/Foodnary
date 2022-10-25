@@ -1,5 +1,5 @@
 import React from "react";
-const RatingStar = ({ data, update }) => {
+const RatingStar = ({ data }) => {
   let sum = 0;
   let value = 0;
 

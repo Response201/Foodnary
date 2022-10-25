@@ -9,11 +9,12 @@ export const SetRatingStar = () => {
   const [first, setfirst] = useState(0);
   const [url, setUrl] = useState("");
   const dispatch = useDispatch();
-  useFetchRecipe({ url });
+  const {data} = useFetchRecipe({ url });
 
   const onClickRating = (e) => {
+  
     setfirst(e.target.value);
-    setUrl("");
+     setUrl("");
   };
 
   useEffect(() => {
@@ -21,12 +22,14 @@ export const SetRatingStar = () => {
     setUrl("");
   }, []);
 
+ 
+
   useEffect(() => {
     if (first !== 0 && first !== undefined) {
-      if (first !== 0) dispatch(recipes.actions.setRating(first));
       setUrl(`${process.env.REACT_APP_URL}/${recipeId}/ratingRecipe`);
+      dispatch(recipes.actions.setRating(first));
     }
-  }, [first, dispatch, recipeId, setfirst]);
+  }, [first, dispatch, recipeId]);
 
   return (
     <div class="ratingControl">

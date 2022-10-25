@@ -17,8 +17,11 @@ export const Home = () => {
   useEffect(() => {
     setUrl(`${process.env.REACT_APP_URL}/threenewestRecipes`);
   }, []);
+  useEffect(() => {
+    setUrl(`${process.env.REACT_APP_URL}/threenewestRecipes`);
+  }, [url]);
 
-  console.log(data);
+ 
 
   return (
     <article className="home___container">
@@ -52,7 +55,7 @@ export const Home = () => {
                     data.map((item) => {
                       return (
                         <div className="recipe_div_image" key={item._id}>
-                          <RecipeLayout item={item} />
+                          <RecipeLayout item={item} setUrl={setUrl} />
                         </div>
                       );
                     })}

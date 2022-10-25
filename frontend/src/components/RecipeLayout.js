@@ -80,7 +80,7 @@ export const RecipeLayout = ({ item, setUrl }) => {
               <>
                 {" "}
                 <p> {item.hearts} </p>
-                <button
+                <button 
                   className={
                     liked.includes(true) ? "likebuttonLiked" : "likebutton"
                   }

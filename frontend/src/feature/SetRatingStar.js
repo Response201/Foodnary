@@ -9,7 +9,7 @@ export const SetRatingStar = () => {
   const [first, setfirst] = useState(0);
   const [url, setUrl] = useState("");
   const dispatch = useDispatch();
-  const {data} = useFetchRecipe({ url });
+  useFetchRecipe({ url });
 
   const onClickRating = (e) => {
   

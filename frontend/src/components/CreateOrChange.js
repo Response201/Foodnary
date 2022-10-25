@@ -238,10 +238,11 @@ export const CreateOrChange = () => {
                     >
                       {x.measure === "" ? <option> Measure </option> : ""}
                       <option value="kg">kg</option>
+                      <option value="gram">gram</option>
                       <option value="dl">dl</option>
                       <option value="ms">matsked</option>
                       <option value="ts">tesked</option>
-                      <option value="ts">st</option>
+                      <option value="st">st</option>
                     </select>
                     <input
                       type="text"

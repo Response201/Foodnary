@@ -140,7 +140,7 @@ export const useFetchRecipe = ({ url }) => {
 
     if (
       url.includes("createRecipe") ||
-      url.includes("changeRecipe") && token
+      (url.includes("changeRecipe") && token)
     ) {
       const options = {
         method: "POST",

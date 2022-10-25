@@ -37,7 +37,7 @@
     padding: 0px 1%;
     font-size: clamp(15px, 3vw, 25px);
   }
-  .oneRecipe___pencil_category{
+  .oneRecipe___pencil_category {
     width: 70%;
     display: flex;
     flex-direction: row;
@@ -108,8 +108,8 @@
 
 .oneRecipe___ingredients_content {
   display: flex;
-  width: 100%;
-  justify-content: space-evenly;
+  width: 80%;
+  justify-content: space-between;
   border-radius: 5px;
 
   .div___amount_measure {
@@ -243,19 +243,8 @@
   }
 
   .star {
-    
     width: 50%;
-   
   }
-
-
-
-
-
-
-
-
-
 }
 
 @media (min-width: 1024px) {

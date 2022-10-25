@@ -18,6 +18,7 @@ export const SetRatingStar = () => {
 
   useEffect(() => {
     setfirst(0);
+    setUrl("");
   }, []);
 
   useEffect(() => {
@@ -25,7 +26,7 @@ export const SetRatingStar = () => {
       if (first !== 0) dispatch(recipes.actions.setRating(first));
       setUrl(`${process.env.REACT_APP_URL}/${recipeId}/ratingRecipe`);
     }
-  }, [first, dispatch, recipeId]);
+  }, [first, dispatch, recipeId, setfirst]);
 
   return (
     <div class="ratingControl">

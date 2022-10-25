@@ -241,6 +241,7 @@ export const CreateOrChange = () => {
                       <option value="dl">dl</option>
                       <option value="ms">matsked</option>
                       <option value="ts">tesked</option>
+                      <option value="ts">st</option>
                     </select>
                     <input
                       type="text"
@@ -332,7 +333,8 @@ export const CreateOrChange = () => {
             )}
             {mainCategory === "Other" ? (
               <>
-                <option value="dinner">Other</option>
+                 <option value="Snacks">Snacks</option>
+                <option value="Other">Other</option>
               </>
             ) : (
               ""

@@ -5,6 +5,9 @@ const RatingStar = ({ data }) => {
 
   /* average-rating function */
 
+
+
+
   if (data) {
     for (let i = 0; i < data.ratings.length; i++) {
       sum += data.ratings[i].rating;

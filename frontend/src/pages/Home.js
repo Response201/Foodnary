@@ -24,7 +24,7 @@ export const Home = () => {
   return (
     <article className="home___container">
       {
-        <Parallax pages={2.1} style={{ top: "0", left: "0" }}>
+        <Parallax pages={2.3} style={{ top: "0", left: "0" }}>
           <ParallaxLayer className="header_container" factor={1} speed={-0.1}>
             <HomeText />
           </ParallaxLayer>

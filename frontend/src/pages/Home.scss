@@ -8,10 +8,8 @@
   background-color: var(--primary-one-solid);
 }
 
-.parallax{
+.parallax {
   background-color: var(--primary-one-solid);
-
-
 }
 .home___container::-webkit-scrollbar {
   display: none; /* for Chrome, Safari, and Opera */
@@ -54,11 +52,12 @@ div::-webkit-scrollbar {
 
 /* About text */
 .about_container {
-  height: 100%;
+  height: 100vh;
   width: 100vw;
   display: flex;
   align-items: center;
   color: var(--primary-two);
+  background-color: var(--primary-one-solid);
   text-shadow: 1px 1px 1px var(--shadow);
 }
 
@@ -69,11 +68,11 @@ div::-webkit-scrollbar {
   flex-direction: column;
   justify-content: space-around;
   align-items: center;
-background-color: var(--primary-one-solid);
+  background-color: var(--primary-one-solid);
 }
 
 .about_container_section {
-background-color:var(--primary-one);
+  background-color: var(--primary-one);
   height: 45%;
   width: 95%;
   max-height: 800px;
@@ -82,15 +81,12 @@ background-color:var(--primary-one);
   align-items: center;
   justify-content: space-around;
   box-shadow: 7px 5px 1px var(--primary-two-hollow);
-  
- 
+
   h1 {
     font-size: clamp(20px, 4.5vw, 45px);
     font-family: "Fredericka the Great", cursive;
     font-weight: 200;
-    margin:  1% 0 0 0;
-    
-    
+    margin: 1% 0 0 0;
   }
 
   p {
@@ -104,12 +100,11 @@ background-color:var(--primary-one);
 /* MAIN - insparation*/
 
 .main_container {
-  min-height: 500px;
   height: 100%;
   width: 100%;
   display: flex;
-  justify-content: center;
-  align-items: center;
+  align-items: flex-start;
+  background-color: var(--primary-one-solid);
 }
 
 .main_content {
@@ -117,7 +112,7 @@ background-color:var(--primary-one);
   height: 75%;
   width: 100%;
   display: flex;
-  justify-content: center;
+  justify-content: flex-start;
   align-items: center;
   text-align: center;
   flex-direction: column;
@@ -126,51 +121,97 @@ background-color:var(--primary-one);
   .main_insparation_header {
     font-size: clamp(20px, 2vw, 50px);
     color: var(--text-change);
+    text-shadow: 2px 2px 2px var(--shadow);
     font-family: "Fredericka the Great", cursive;
     font-weight: 200;
     padding: 15px;
-    border: 1px solid var(--text-change);
-    background-color: var(--primary-two-hollow);
   }
 }
 
 .main_recipe_content {
   height: 100%;
   margin-top: 20px;
-  width: 100%;
+  width: 98%;
   display: flex;
   justify-content: space-around;
   align-items: center;
-  gap: 10px;
-  flex-direction: column;
+  gap: 5px;
+  
 }
 .recipe_div {
   width: 90%;
   display: flex;
   justify-content: center;
   align-items: center;
-  flex-direction: column;
+  margin: 0 auto;
 }
 .recipe_div_image {
-  background-color: var(--primary-one-solid);
-  width: 100%;
-  max-width: 650px;
-  height: 80%;
-  max-height: 450px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background-color: var(--primary-two);
+  aspect-ratio: 9/9;
   overflow-y: hidden;
-  border-radius: 5px;
-  z-index: 10;
+  box-shadow: 5px 4px 1px var(--shadow);
+  border-radius: 0px;
+  margin: 0 auto;
+ 
+
+
+  .fill_svg {
+    background: var(--primary-two);
+    fill: var(--primary-two);
+    margin: 0 auto;
+    padding: 0;
+ 
+  }
+
+  .recipe___content_title {
+    width: 96%;
+    margin-top: 0;
+    aspect-ratio: 9/3;
+    height: fit-content;
+    margin: 0 2%;
+    flex-direction: column;
+    justify-content: flex-start;
+    color: var(--primary-one);
+   
+    h2 {
+      border-top: 1px solid;
+      text-align: center;
+      font-size: clamp(20px, 3vw, 35px);
+      margin: 0;
+      padding: 4% 15px 0 15px;
+      font-family: "Fredericka the Great", cursive;
+    }
+    p {
+      font-size: clamp(10px, 5vw, 20px);
+      margin: 0 0 15px 0;
+      padding: 0;
+      font-family: "Poppins", sans-serif;
+    }
+    p:hover {
+      text-decoration: underline;
+    }
+  }
 }
 
 .recipe_div_image:last-child {
   display: none;
 }
 
-@media (min-width: 1024px) {
+@media (min-width: 768px) {
   .recipe_div_image:last-child {
     display: flex;
   }
   .main_recipe_content {
-    flex-direction: row;
+    gap: 15px;
+    width: 96%;
+  }
+}
+
+@media (min-width: 1024px) {
+  .recipe_div_image:last-child {
+    display: flex;
   }
 }

@@ -34,7 +34,7 @@ const HomeText = () => {
         style={{ backgroundPositionX: valueX, backgroundPositionY: valueY }}
       >
      
-       
+     
         
       </div>
       <div

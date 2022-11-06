@@ -8,7 +8,7 @@
 }
 
 .mouseArea {
-  background-color: var(--primary-one-solid);
+  background-color: rgb(239,215,188);
   @include center();
   height: 100%;
   width: 100%;
@@ -17,22 +17,23 @@
   align-items: center;
   text-align: center;
   align-content: center;
+ 
+  
 }
 
 /* Set background-clip: text to make the "background only showing on the text" */
 
 .background {
-  background: url("https://source.unsplash.com/XbsuXjgN50Y");
-  height: 100%;
+  margin-top:5%;
+  height: 115%;
   width: 105vw;
+  background: url("https://source.unsplash.com/XtUd5SiX464");
   background-repeat: no-repeat;
   background-size: cover;
-  background-position-x: center;
-  background-position-y: 50%;
-  background-position: center;
   /*   background-clip: text;
   -webkit-background-clip: text; */
-  @include center();
+  position: absolute;
+  right: 0;
   z-index: 0;
 }
 

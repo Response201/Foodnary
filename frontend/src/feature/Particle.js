@@ -2,6 +2,7 @@ import './particle.scss'
 import Parallax from "parallax-js";
 import React, { useRef, useEffect, useState } from "react";
 
+
 const Particle = () => {
   const speed = 400;
   const list = useRef(null);

@@ -85,7 +85,7 @@ export const Home = () => {
 
           <ParallaxLayer
             speed={1}
-            factor={1.1}
+            factor={1.2}
             offset={0.8}
             className="about_container"
           >

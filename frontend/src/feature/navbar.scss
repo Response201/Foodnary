@@ -16,12 +16,10 @@
     width: 75%;
     max-width: 500px;
 
-   
-    .nav_a{
-     
+    .nav_a {
       border: 5px double var(--primary-two);
       border-radius: 15px 0;
-      background-color: var(--primary-one);
+      background-color: var(--nav_search_switch);
       padding: 1px 4px 2px 4px;
       text-decoration: none;
       font-size: clamp(10px, 3vh, 22px);
@@ -30,8 +28,6 @@
       color: var(--text-primary);
       cursor: default;
     }
-
-   
   }
 
   .nav_image_container {
@@ -49,23 +45,18 @@
     border: 0.2em solid var(--pink);
     height: clamp(35px, 2vw, 50px);
     width: clamp(35px, 2vw, 50px);
-    background-color: var(--icon-nav);
-  
   }
   .nav_img:hover {
-    background-color: var(--primary-one);
-
+    background-color: var(--shadow);
   }
-  .link_hoover{
+  .link_hoover {
     transition: ease-in-out 0.2s;
-
   }
 
-  .link_hoover:hover{
-    transform: scale(95%) ;
+  .link_hoover:hover {
+    transform: scale(95%);
     color: var(--text-primary);
     text-shadow: 0.5px 0.5px 0.6px var(--pink);
     cursor: default;
   }
-
 }

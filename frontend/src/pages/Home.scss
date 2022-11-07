@@ -10,6 +10,7 @@
 
 .parallax {
   background-color: var(--primary-one-solid);
+  min-height: 1000px;
 }
 .home___container::-webkit-scrollbar {
   display: none; /* for Chrome, Safari, and Opera */
@@ -39,8 +40,8 @@ div::-webkit-scrollbar {
 /* HEADER */
 
 .header_container {
+  height: 100%;
   background-color: var(--primary-one-solid);
-
   overflow: hidden;
 }
 
@@ -52,9 +53,11 @@ div::-webkit-scrollbar {
 
 /* About text */
 .about_container {
-  height: 100vh;
-  width: 100vw;
+  height: 100%;
+  width: 100%;
   display: flex;
+  flex-direction: column;
+  justify-content: center;
   align-items: center;
   color: var(--primary-two);
   background-color: var(--primary-one-solid);
@@ -63,19 +66,18 @@ div::-webkit-scrollbar {
 
 .about_container_article {
   height: 100%;
-  width: 100vw;
+  width: 100%;
   display: flex;
-  flex-direction: column;
-  justify-content: space-around;
-  align-items: center;
+  justify-content: center;
   background-color: var(--primary-one-solid);
 }
 
 .about_container_section {
   background-color: var(--primary-one);
-  height: 45%;
-  width: 95%;
-  max-height: 800px;
+  height: 100%;
+  width: 100%;
+  max-height: 500px;
+  max-width: 950px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -83,7 +85,7 @@ div::-webkit-scrollbar {
   box-shadow: 7px 5px 1px var(--primary-two-hollow);
 
   h1 {
-    font-size: clamp(20px, 4.5vw, 45px);
+    font-size: clamp(15px, 4vw, 45px);
     font-family: "Fredericka the Great", cursive;
     font-weight: 200;
     margin: 1% 0 0 0;
@@ -91,7 +93,7 @@ div::-webkit-scrollbar {
 
   p {
     font-family: "Poppins", sans-serif;
-    font-size: clamp(12px, 2.5vw, 26px);
+    font-size: clamp(10px, 2vw, 26px);
     padding: 0 2%;
     margin: 0;
   }
@@ -108,8 +110,7 @@ div::-webkit-scrollbar {
 }
 
 .main_content {
-  min-height: 350px;
-  height: 75%;
+  height: 100%;
   width: 100%;
   display: flex;
   justify-content: flex-start;
@@ -135,8 +136,8 @@ div::-webkit-scrollbar {
   display: flex;
   justify-content: space-around;
   align-items: center;
-  gap: 5px;
-  
+  gap: 15px;
+  flex-direction: column;
 }
 .recipe_div {
   width: 90%;
@@ -155,15 +156,12 @@ div::-webkit-scrollbar {
   box-shadow: 5px 4px 1px var(--shadow);
   border-radius: 0px;
   margin: 0 auto;
- 
-
 
   .fill_svg {
     background: var(--primary-two);
     fill: var(--primary-two);
     margin: 0 auto;
     padding: 0;
- 
   }
 
   .recipe___content_title {
@@ -175,17 +173,17 @@ div::-webkit-scrollbar {
     flex-direction: column;
     justify-content: flex-start;
     color: var(--primary-one);
-   
+
     h2 {
       border-top: 1px solid;
       text-align: center;
-      font-size: clamp(20px, 3vw, 35px);
+      font-size: clamp(15px, 3vw, 35px);
       margin: 0;
       padding: 4% 15px 0 15px;
       font-family: "Fredericka the Great", cursive;
     }
     p {
-      font-size: clamp(10px, 5vw, 20px);
+      font-size: clamp(10px, 3vw, 20px);
       margin: 0 0 15px 0;
       padding: 0;
       font-family: "Poppins", sans-serif;
@@ -201,12 +199,15 @@ div::-webkit-scrollbar {
 }
 
 @media (min-width: 768px) {
-  .recipe_div_image:last-child {
-    display: flex;
-  }
   .main_recipe_content {
     gap: 15px;
     width: 96%;
+    gap: 15px;
+    flex-direction: row;
+  }
+
+  .about_container_section {
+    max-height: 800px;
   }
 }
 

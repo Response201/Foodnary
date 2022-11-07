@@ -6,11 +6,13 @@ import { RecipeLayout } from "../components/RecipeLayout";
 import { Parallax, ParallaxLayer } from "@react-spring/parallax";
 
 import "./Home.scss";
-import HomeText from "../components/HomeText";
+
 import { useDispatch } from "react-redux";
 import { ui } from "../reducers/ui";
 import { useNavigate } from "react-router";
 import { recipes } from "../reducers/recipes";
+import Particle from "../feature/Particle";
+import Header_background from "../components/Header_background_text";
 
 /*eslint-disable */
 export const Home = () => {
@@ -45,23 +47,24 @@ export const Home = () => {
     <article className="home___container">
       {
         <Parallax
-          pages={2.2}
+          pages={2}
           style={{ top: "0", left: "0" }}
           className="parallax"
         >
           <ParallaxLayer
             className="header_container"
-            factor={0.75}
+            factor={0.9}
             speed={-0.1}
             offset={0}
           >
-            <HomeText />
+            <Particle />
+            <Header_background />
           </ParallaxLayer>
 
           <ParallaxLayer
             speed={-15}
-            factor={0.1}
-            offset={0.9}
+            factor={0.5}
+            offset={0.5}
             sticky={{ start: 0.9, end: 0.9 }}
             style={{ height: "100px" }}
           >
@@ -82,8 +85,8 @@ export const Home = () => {
 
           <ParallaxLayer
             speed={1}
-            factor={1.2}
-            offset={0.75}
+            factor={1.1}
+            offset={0.8}
             className="about_container"
           >
             <article
@@ -145,30 +148,7 @@ export const Home = () => {
 
           <ParallaxLayer speed={1} factor={1} offset={1}>
             <article className="about_container_article">
-              <section className="about_container_section">
-                <h1>Welcome </h1>
-
-                <p>
-                  Lorem ipsum dolor sit amet. Et rerum vero est consequatur
-                  magni vel maxime necessitatibus aut reprehenderit doloribus.
-                  Sit quia voluptatem qui aspernatur culpa aut voluptas totam in
-                  aperiam suscipit non optio iusto qui animi officiis et ullam
-                  architecto. Non labore magnam quo alias recusandae aut vitae
-                  nisi rem praesentium voluptate et blanditiis accusantium aut
-                  obcaecati numquam et animi labore.
-                </p>
-                <p>
-                  Ea quasi minima qui harum quis et animi illo hic harum
-                  repudiandae qui corporis velit et dolor rerum qui consequatur
-                  culpa. Aut aspernatur quos aut suscipit fuga est internos
-                  temporibus in reprehenderit eaque eos magnam explicabo. Ut
-                  facere dolores aut nihil harum et maiores omnis aut eveniet
-                  aspernatur aut autem cupiditate est quas corporis et suscipit
-                  eligendi.
-                </p>
-              </section>
-
-              <section className="about_container_section">
+              <section speed={2} className="about_container_section">
                 <h1> Skapa ett konto och följ dina vänner</h1>
 
                 <p>

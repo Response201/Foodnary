@@ -1,161 +1,111 @@
+@import url("https://fonts.googleapis.com/css?family=Roboto:400,400i,700");
 
-
-  @import url("https://fonts.googleapis.com/css?family=Roboto:400,400i,700");
-
-
-  
-  .flexbox {
-
-position:static;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: flex-end;
-    color: var(--primary-one);
-    width: 100px;
-margin-top: clamp(-3px, 3vw, -5px);
- 
-   
-  }
-  
- 
-  
-  
-  .search > div {
-    display: inline-block;
-    position: relative;
-    
-  }
-  
-  .search > div:after {
-    content: "";
-    background: var(--primary-one);
-    width: 4px;
-    height: clamp(14px, 1vw, 17px);
-    position: absolute;
-    top: clamp(15px, 3vw, 21px);
-    right: 0px;
-    transform: rotate(130deg);
-    color: var(--primary-one);
-  }
-  
-  .search > div > input {
-    color: var(--primary-one);
-    font-size: 16px;
-    background: transparent;
-
-    width: clamp(4px, 2vw, 15px);
-
-   
-    height:clamp(4px, 2vw, 15px);
-    padding:clamp(1px, 2vw, 3px);
-    border: solid 5px var(--primary-one);;
-    outline: none;
-    border-radius: 35px;
-    transition: width 0.5s;
-  }
-  
-  .search > div > input::placeholder {
-    color: var(--primary-one);
-    opacity: 0;
-    transition: opacity 150ms ease-out;
-  }
-  
-  .search > div > input:focus::placeholder {
-    opacity: 1;
-  }
-  
-  .search > div > input:focus,
-  .search > div > input:not(:placeholder-shown) {
-    width: 100px;
-      
-  }
-  
-
-  .output___result{
-max-height: 200px;
-width:  100px;
-overflow-y: scroll;
-border-radius: 0   0 10px 10px;
-background-color: var(--primary-two);
-position:relative;
-margin-right: 10px;
-scrollbar-width: none;
-
-  }
-  .output___result::-webkit-scrollbar{
-display: none;
-
-
-  }
-.output___p:hover{
-
-background-color: var(--primary-one);
-color: var(--primary-two);
-
+.flexbox {
+  position: static;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-end;
+  color: var(--primary-one);
+  width: 100px;
+  margin-top: clamp(-3px, 3vw, -5px);
 }
 
+.search > div {
+  display: inline-block;
+  position: relative;
+}
 
+.search > div:after {
+  content: "";
+  background-color: var(--nav_search_switch);
+  width: 4px;
+  height: clamp(14px, 1vw, 17px);
+  position: absolute;
+  top: clamp(15px, 3vw, 21px);
+  right: 0px;
+  transform: rotate(130deg);
+  color: var(--nav_search_switch);
+}
 
+.search > div > input {
+  color: var(--nav_search_switch);
+  font-size: 16px;
+  background: transparent;
 
+  width: clamp(4px, 2vw, 15px);
 
+  height: clamp(4px, 2vw, 15px);
+  padding: clamp(1px, 2vw, 3px);
+  border: solid 5px var(--nav_search_switch);
+  outline: none;
+  border-radius: 35px;
+  transition: width 0.5s;
+}
 
+.search > div > input::placeholder {
+  color: var(--primary-one);
+  opacity: 0;
+  transition: opacity 150ms ease-out;
+}
 
+.search > div > input:focus::placeholder {
+  opacity: 1;
+}
 
+.search > div > input:focus,
+.search > div > input:not(:placeholder-shown) {
+  width: 100px;
+}
 
-  
+.output___result {
+  max-height: 200px;
+  width: 100px;
+  overflow-y: scroll;
+  border-radius: 0 0 10px 10px;
+  background-color: rgba($color: #ffffff, $alpha: 0.5);
+  position: relative;
+  margin-right: 10px;
+  scrollbar-width: none;
+  color: var(--nav_search_switch);
+}
+.output___result::-webkit-scrollbar {
+  display: none;
+}
+.output___p:hover {
+  background-color: var(--nav_search_switch);
+  color: var(--primary-two);
+}
+
 @media (min-width: 768px) {
-
   .flexbox {
-
-   
-        width: 160px;
-   
-     
-       
-      }
+    width: 160px;
+  }
 
   .search > div > input:focus,
   .search > div > input:not(:placeholder-shown) {
     width: 150px;
-      
   }
-  
 
-  .output___result{
-
+  .output___result {
     max-height: 250px;
-width:  150px;
+    width: 150px;
   }
-
-
 }
 
 @media (min-width: 1024px) {
-
   .flexbox {
-
-   
     width: 260px;
-
- 
-   
   }
 
   .search > div > input:focus,
   .search > div > input:not(:placeholder-shown) {
     width: 250px;
-      
   }
-  
 
-  .output___result{
+  .output___result {
     max-height: 300px;
 
-width:  250px;
+    width: 250px;
   }
-
-
-
- 
 }

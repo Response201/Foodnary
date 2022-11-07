@@ -1,6 +1,5 @@
 .con {
   padding-top: clamp(0.2em, 5vw, 0em);
-  
 }
 
 .switch input {
@@ -17,7 +16,7 @@
   font-size: clamp(15px, 2vw, 20px); /* 1 */
   height: 1em;
   width: 2.3em;
-  background: var(--primary-one);
+  background-color: var(--nav_search_switch);
   border-radius: 1em;
   padding: 0.2em;
 }

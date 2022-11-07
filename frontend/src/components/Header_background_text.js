@@ -1,4 +1,4 @@
-import "./HomeText.scss";
+import "./header.scss";
 
 import React, { useEffect, useState } from "react";
 
@@ -16,7 +16,7 @@ const useMove = () => {
   };
 };
 
-const HomeText = () => {
+const Header_background = () => {
   const { x, y, handleMouseMove } = useMove();
 
   const [valueX, setvalueX] = useState(0);
@@ -37,8 +37,11 @@ const HomeText = () => {
      
         
       </div>
+   
+       
       <div
         className="title"
+      
         
       >
        <h2>  Foodnary </h2>
@@ -47,10 +50,9 @@ const HomeText = () => {
        
         
       </div>
-     
  
     </div>
   );
 };
 
-export default HomeText;
+export default Header_background;

@@ -5,7 +5,7 @@
   text-align: center;
   scrollbar-width: none;
   font-size: 16px;
-  background-color: var(--primary-one-solid);
+  
 }
 
 .parallax {
@@ -41,8 +41,10 @@ div::-webkit-scrollbar {
 
 .header_container {
   height: 100%;
-  background-color: var(--primary-one-solid);
+  width: 100%;
+  background-color: var(--primary-two);
   overflow: hidden;
+  position: relative;
 }
 
 .Gif___farmer_text {

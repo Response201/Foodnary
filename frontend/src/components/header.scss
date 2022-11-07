@@ -3,15 +3,16 @@
   -ms-transform: translate(-50%, -50%);
   transform: translate(-50%, -50%);
   left: 50%;
-  top: 42%;
+  top: 43%;
   position: absolute;
+  
 }
 
 .mouseArea {
-  background-color: rgb(239,215,188);
+  background-color: var(--primary-two);
   @include center();
-  height: 100%;
-  width: 100%;
+ height: 100%;
+ width: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -24,23 +25,34 @@
 /* Set background-clip: text to make the "background only showing on the text" */
 
 .background {
-  margin-top:5%;
-  height: 115%;
-  width: 105vw;
-  background: url("https://source.unsplash.com/_79ZJS8pV70");
+ 
+  margin-top:-20%;
+  height: 110%;
+  width: 110vw;
+  background: url("../assets/image/pexels-leeloo-thefirst-5791788-phone.jpg");
   background-repeat: no-repeat;
   background-size: cover;
-  /*   background-clip: text;
-  -webkit-background-clip: text; */
   position: absolute;
-  right: 0;
+ left: -5%;
   
+}
+
+.background-dark{
+  margin-top:-5%;
+  height: 110%;
+  width: 105vw;
+  background: url("https://source.unsplash.com/ihDzR6U2Gds");
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: absolute;
+
 }
 
 
 
+
 .title {
-top: 5%;
+
   min-width: 290px;
   min-height: 200px;
   border: 5px solid var(--text-change);
@@ -75,4 +87,58 @@ top: 5%;
   }
   font-family: "Fredericka the Great", cursive;
   font-weight: 200;
+}
+
+
+@media (min-width: 768px) {
+  .background {
+    left: -5%;
+    margin-top:-10%;
+    height: 110%;
+    width: 105vw;
+    background: url("../assets/image/pexels-кристина-александрова-3750709.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: absolute;
+   
+    
+  }
+  
+  .background-dark{
+    margin-top:0%;
+    height: 105vh;
+    width: 105vw;
+    background: url("https://source.unsplash.com/Js05xQ5TLUw");
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: absolute;
+  
+  }
+}
+
+@media (min-width: 1024px) {
+  .background {
+ 
+    margin-top:-5%;
+    height: 110%;
+    width: 105vw;
+    background: url("../assets/image/pexels-leeloo-thefirst-5791782.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: absolute;
+   
+    
+  }
+  
+  .background-dark{
+    margin-top:0%;
+    height: 105vh;
+    width: 105vw;
+    background: url("https://source.unsplash.com/Js05xQ5TLUw");
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: absolute;
+  
+  }
+  
 }

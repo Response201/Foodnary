@@ -1,6 +1,7 @@
 import "./header.scss";
 
 import React, { useEffect, useState } from "react";
+import { useSelector } from "react-redux";
 
 const useMove = () => {
   const [state, setState] = useState({ x: 0, y: 0 });
@@ -18,19 +19,20 @@ const useMove = () => {
 
 const Header_background = () => {
   const { x, y, handleMouseMove } = useMove();
-
   const [valueX, setvalueX] = useState(0);
   const [valueY, setvalueY] = useState(0);
-
+  const theme = useSelector((store) => store.ui.theme);
   useEffect(() => {
     setvalueX((4 * x) / 170 - 10);
     setvalueY((4 * y) / 170 + 40);
   }, [x, y]);
 
+
+
   return (
     <div className="mouseArea" onMouseMove={handleMouseMove}>
       <div
-        className="background"
+        className={theme === 'root' ? 'background' : 'background-dark'}
         style={{ backgroundPositionX: valueX, backgroundPositionY: valueY }}
       >
      

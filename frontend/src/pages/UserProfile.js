@@ -15,6 +15,12 @@ export const UserProfile = () => {
   const { data, next } = useFetchRecipe({ url });
   const follow = following.map((e) => e.username === seeProfile);
 
+
+
+
+
+
+
   useFetchUser({ url });
 
   useEffect(() => {
@@ -31,7 +37,7 @@ export const UserProfile = () => {
 
   return (
     <div className="userProfile___container">
-      <section className="userProfile___header_btn">
+      <section className={follow.includes(true) ?"userProfile___header_btn" : "userProfile___no_btn"}>
         <h2>{seeProfile}</h2>
         {token && username ? (
           <button onClick={onClickfollow}>

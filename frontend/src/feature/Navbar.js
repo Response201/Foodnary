@@ -17,6 +17,7 @@ export const Navbar = () => {
 
   const onClickPath = () => {
     dispatch(ui.actions.setPath("profile"));
+    dispatch(ui.actions.setSignInOrUp(false));
   };
 
   return (

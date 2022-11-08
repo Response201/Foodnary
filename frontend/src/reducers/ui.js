@@ -13,6 +13,7 @@ export const ui = createSlice({
     path:'',
     update:false,
     showWelcomePage: true,
+    signInOrUp:false,
   },
   reducers: {
     setLoading: (state, action) => {
@@ -50,6 +51,9 @@ state.next = action.payload;
     },
     setShowWelcomePage: (state, action) => {
       state.showWelcomePage = action.payload;
+    },
+    setSignInOrUp: (state, action) => {
+      state.signInOrUp = action.payload;
     },
 
   }

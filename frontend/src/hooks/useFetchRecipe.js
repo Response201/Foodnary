@@ -150,13 +150,13 @@ export const useFetchRecipe = ({ url }) => {
         },
         body: JSON.stringify({
           role: role,
-          title: title,
-          description: description,
+          title: title.charAt(0).toUpperCase()+title.slice(1),
+          description: description.charAt(0).toUpperCase()+description.slice(1),
           ingredients: ingredients,
           mainCategory: mainCategory,
           subCatergory: subCatergory,
           image: image,
-          username: username
+          username: username 
         })
       };
       fetchData({ options });

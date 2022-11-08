@@ -13,6 +13,7 @@ import { useNavigate } from "react-router";
 import { recipes } from "../reducers/recipes";
 import Particle from "../feature/Particle";
 import Header_background from "../components/Header_background_text";
+import { Header_create_account_animation } from "../feature/Header_create_account_animation";
 
 /*eslint-disable */
 export const Home = () => {
@@ -43,6 +44,12 @@ export const Home = () => {
     navigate("/recipe");
   };
 
+
+
+
+
+
+
   return (
     <article className="home___container">
       {
@@ -69,17 +76,7 @@ export const Home = () => {
             style={{ height: "100px" }}
           >
             <section className="Gif___farmer_text">
-              <iframe
-                src="https://giphy.com/embed/XMI5EK3tkcfvyAEkpD"
-                frameBorder="0"
-                style={{
-                  padding: "0",
-                  margin: "0",
-                  frameBorder: "0",
-                  width: "25vw",
-                  maxWidth: "300px"
-                }}
-              />
+            <Header_create_account_animation />
             </section>
           </ParallaxLayer>
 

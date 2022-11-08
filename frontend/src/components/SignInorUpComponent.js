@@ -8,7 +8,6 @@ import { ui } from "../reducers/ui";
 /*eslint-disable */
 export const SignInorUp = ({
   title,
-  showExtraInput,
   onClick,
   btnText,
   urlRout
@@ -19,6 +18,7 @@ export const SignInorUp = ({
   const [fourInput, setFourInput] = useState("");
   const [fiveInput, setFiveInput] = useState("");
   const [url, setUrl] = useState("");
+  const signInOrUp = useSelector((store) => store.ui.signInOrUp);
   const email = useSelector((store) => store.user.email);
   const message = useSelector((store) => store.ui.message);
   const dispatch = useDispatch();
@@ -102,7 +102,7 @@ export const SignInorUp = ({
             minLength={6}
           />
           <>
-            {showExtraInput ? (
+            {signInOrUp ? (
               <>
                 <input
                 className="SignInorUp___input"
@@ -110,7 +110,7 @@ export const SignInorUp = ({
                   placeholder="Username"
                   value={threeInput}
                   onChange={(e) =>
-                    setThreeInput(e.target.value.toLocaleLowerCase())
+                    setThreeInput(e.target.value.charAt(0).toUpperCase() + e.target.value.slice(1))
                   }
                   minLength={2}
                 />

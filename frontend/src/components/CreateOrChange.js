@@ -31,7 +31,6 @@ export const CreateOrChange = () => {
   const recipeId = useSelector((store) => store.recipes.id);
   const getimage = useSelector((store) => store.recipes.image);
   const errormessage = useSelector((store) => store.ui.message);
-
   const [newImage, setnewImage] = useState("");
   const [next, setNext] = useState(false);
   const [submit, setSubmit] = useState(false);
@@ -78,7 +77,7 @@ export const CreateOrChange = () => {
       if (getHeader === "Create recipe" && next) {
         setUrl(`${process.env.REACT_APP_URL}/createRecipe`);
         dispatch(recipes.actions.setUploadFile(true));
-        dispatch(recipes.actions.setUploadFile(false));
+       
         setTimeout(() => {
           navigate("/profile");
         }, 5000);

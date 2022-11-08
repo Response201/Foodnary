@@ -24,7 +24,7 @@ export const  UseSignIn = ({
       body: JSON.stringify({
         email: oneInput,
         password: twoInput,
-        username: threeInput,
+        username: threeInput ,
         firstname: fourInput,
         lastname: fiveInput
       })

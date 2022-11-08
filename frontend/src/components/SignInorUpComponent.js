@@ -42,16 +42,16 @@ export const SignInorUp = ({
         setFourInput("");
         setFiveInput("");
         dispatch(ui.actions.setMessage(""));
-      }, 8000);
+      }, 10000);
     }
 
     if (message.includes("_id" || message.includes('Cannot'))) {
       dispatch(ui.actions.setMessage(""));
-    }
+    } 
 
     setTimeout(() => {
       dispatch(ui.actions.setMessage(""));
-    }, 10000);
+    }, 10000)
   }, [message, dispatch, email]);
 
   const onSubmit = (e) => {

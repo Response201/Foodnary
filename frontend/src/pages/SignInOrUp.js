@@ -17,13 +17,7 @@ export const SignInOrUp = () => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
 
-  useEffect(() => {
-    if (message.includes("registration successful!"))
-      dispatch(ui.actions.setSignInOrUp(false));
-    setTimeout(() => {
-      onClick();
-    }, 8000);
-  }, [message]);
+ 
 
   const onClick = () => {
     if (signInOrUp) {
@@ -54,7 +48,7 @@ export const SignInOrUp = () => {
     } else {
       navigate("/signin");
     }
-  }, [accessToken, veri, navigate]);
+  }, [accessToken, veri]);
 
   return (
     <article className="signInorUp___Container">

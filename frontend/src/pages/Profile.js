@@ -28,6 +28,7 @@ export const Profile = () => {
     dispatch(user.actions.setUsername(""));
     dispatch(user.actions.setRole(""));
     dispatch(user.actions.setEmail(""));
+    dispatch(ui.actions.setSignInOrUp(false));
     navigate("/signin");
   };
 

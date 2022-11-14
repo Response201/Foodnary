@@ -160,6 +160,8 @@ export const CreateOrChange = () => {
 
   return (
     <>
+   
+   
       <form className="createRecipes___form">
         <section className="createRecipes___header_container">
           <h2>{getHeader}</h2>{" "}
@@ -172,10 +174,11 @@ export const CreateOrChange = () => {
             ""
           )}
         </section>
-
+        <div className="createRecipes___image"> 
+          <ImageInput setNext={setNext} setnewImage={setnewImage} style={{heigth:'100%'}} />
+          </div>
         <section className="createRecipes___inputContainer">
-          <ImageInput setNext={setNext} setnewImage={setnewImage} />
-
+       
           <section className="createRecipes___error_container">
             {errormessage.includes("Error!") ? (
               <section className="btnText_password_verification___container">
@@ -367,6 +370,7 @@ export const CreateOrChange = () => {
           </button>
         </section>
       </form>
+    
     </>
   );
 };

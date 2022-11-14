@@ -22,13 +22,14 @@ export const CreateRecipes = () => {
   
 
   return (
-    <article className="createRecipes___container"> 
-  
+    <article className="create___container"> 
+  <section className="createRecipes___container">
     <section className='createRecipes___content' >
 
 
 <CreateOrChange  />
 
+    </section>
     </section>
     </article>
   )

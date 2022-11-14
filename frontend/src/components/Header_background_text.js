@@ -27,32 +27,18 @@ const Header_background = () => {
     setvalueY((4 * y) / 170 + 40);
   }, [x, y]);
 
-
-
   return (
     <div className="mouseArea" onMouseMove={handleMouseMove}>
       <div
-        className={theme === 'root' ? 'background' : 'background-dark'}
+        className={theme === "root" ? "background" : "background-dark"}
         style={{ backgroundPositionX: valueX, backgroundPositionY: valueY }}
-      >
-     
-     
-        
-      </div>
-   
-       
-      <div
-        className="title"
-      
-        
-      >
-       <h2>  Foodnary </h2>
+      ></div>
+
+      <div className="title">
+        <h2> Foodnary </h2>
         <p> All your favorite meals!</p>
         <p>____________</p>
-       
-        
       </div>
- 
     </div>
   );
 };

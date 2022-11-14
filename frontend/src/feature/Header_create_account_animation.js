@@ -25,7 +25,7 @@ export const Header_create_account_animation = () => {
         display: "flex",
         flexDirection: "column",
         justifyContent: "center",
-        alignItems: "flex-end",
+        alignItems: "center",
         position: "relative",
         borderRadius: "50%"
       }}
@@ -34,20 +34,14 @@ export const Header_create_account_animation = () => {
         animationData={animation}
         loop={true}
         style={{
-          width: "140%",
-          top: "-17%",
-          right: "-20%",
-          position: "absolute",
-          margin: "0",
-          padding: "0"
+          width: "140px"
         }}
       />
       <h1
         style={{
-          width: "100%",
-          height: "10%",
+          width: "120px",
+          height: "20px",
           position: "absolute",
-          fontSize: "95%",
           color: "black",
           fontWeight: "700"
         }}

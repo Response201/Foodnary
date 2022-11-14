@@ -12,6 +12,7 @@ import { ChangePassword } from "./pages/ChangePassword";
 import { CreateRecipes } from "./pages/CreateRecipes";
 import { UserProfile } from "./pages/UserProfile";
 import {OneRecipe} from './pages/OneRecipe'
+import Home___profile from "./pages/Home___profile";
 
 export const PageRoutes = () => {
   return (
@@ -19,6 +20,7 @@ export const PageRoutes = () => {
       <Routes>
        
         <Route exact path="/" element={<Home />}></Route>
+        <Route exact path="/home" element={<Home___profile/>}></Route>
         <Route exact path="/signin" element={<SignInOrUp />}></Route>
         <Route exact path="/profile" element={<Profile />}></Route>
         <Route exact path="/user" element={<UserProfile />}></Route>

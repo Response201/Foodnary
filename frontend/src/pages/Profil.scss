@@ -1,11 +1,9 @@
 .profil___container {
-  height: 98vh;
+  height: 98%;
   display: grid;
-
   grid-template-columns: repeat(12, 1fr);
   grid-template-rows: repeat(12, 1fr);
   justify-content: center;
-
   padding: 0 5px;
 }
 
@@ -74,9 +72,8 @@
   display: grid;
   width: 100%;
   gap: 10px;
-  margin-bottom: 50px;
-  padding: 0px;
-  grid-template-columns: repeat(1, minmax(320px, 1fr));
+padding: 0px;
+ grid-template-columns: repeat(1, minmax(320px, 1fr));
 
   h2 {
     font-size: clamp(18px, 2vw, 25px);
@@ -152,8 +149,9 @@
     
     .profil_grid___Container,
   .oneRecipteWidth_container {
-    grid-row: 3/12;
+    grid-row: 2/13;
     grid-column: 1/9;
+    margin-bottom: 50px;
   }
 
 }
@@ -166,7 +164,7 @@
   .profil___followers {
     grid-row: 2/7;
     grid-column: 10/13;
-    margin: 0 0px 5px 0;
+    margin: 0 0px 0px 0;
   }
 
   .profil_grid___Content {

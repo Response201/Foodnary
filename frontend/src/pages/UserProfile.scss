@@ -3,8 +3,22 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  height:99vh;
+  overflow-y: hidden;
+ 
 }
 
+.profil_grid___Content,
+.oneRecipteWidth {
+width: 100%;
+height: 100%;
+ grid-template-columns: repeat(auto-fit, minmax(300px, 500px));
+ align-items: flex-start;
+ justify-content: space-around;
+
+  overflow-y: scroll;
+  padding-bottom: 50px;
+}
 
 
 .userProfile___header_btn {
@@ -42,4 +56,17 @@
 
 
 
+}
+
+
+@media (min-width:1024px) {
+
+  .profil_grid___Content,
+.oneRecipteWidth {
+
+ align-items: flex-start;
+
+
+}
+  
 }

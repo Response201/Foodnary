@@ -1,15 +1,21 @@
 .createRecipes___container {
   height: 98vh;
-  min-height: 950px;
+  width: 100vw;
+
   display: flex;
   justify-content: center;
-  align-items: flex-start;
-  margin-top: 1vh;
+  align-items: center;
+
+  overflow-y: hidden;
+  
 }
 
 .create___container {
-  width: 100%;
-  min-width: 300px;
+  width: 100vw;
+height: 93vh;
+margin-bottom: 2vh ;
+
+
 }
 
 .createRecipes___content {
@@ -17,20 +23,39 @@
   border-radius: 10px;
   box-shadow: 5px 5px 5px var(--shadow), inset 2px 2px 5px var(--primary-two),
     inset -2px -5px 5px var(--shadow);
-  width: 100%;
-  max-width: 850px;
+  width: 95%;
+  min-width: 300px;
+  max-width: 650px;
   padding: 0px 1.5% 25px 1.5%;
   color: var(--text-primary);
+  overflow-y: scroll;
+scrollbar-width: none;
+
   display: flex;
-  flex-direction: column;
-  justify-content: space-evenly;
-  align-items: center;
+
+
+  height: fit-content;
+  max-height: 80vh;
 }
 
+
+
+.createRecipes___content::-webkit-scrollbar {
+  display: none; /* for Chrome, Safari, and Opera */
+}
+
+
+
 @media (min-width: 768px) {
-  .createRecipes___container {
-    align-items: center;
-    margin-top: 0vh;
-    min-height: 1200px;
+ 
+
+}
+
+
+@media (min-width: 1024px) {
+  .create___container {
+ min-height: 900px;
   }
 }
+
+

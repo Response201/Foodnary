@@ -1,20 +1,21 @@
 .createRecipes___container {
-  height: 98vh;
+ 
   width: 100vw;
-
+height: 100vh;
   display: flex;
   justify-content: center;
-  align-items: center;
-
+  align-items: flex-start;
   overflow-y: hidden;
+  position: relative;
   
 }
 
 .create___container {
   width: 100vw;
-height: 93vh;
-margin-bottom: 2vh ;
 
+position: absolute;
+top:14%;
+overflow-y: hidden;
 
 }
 
@@ -26,16 +27,14 @@ margin-bottom: 2vh ;
   width: 95%;
   min-width: 300px;
   max-width: 650px;
-  padding: 0px 1.5% 25px 1.5%;
+  padding:0 1.5% ;
   color: var(--text-primary);
   overflow-y: scroll;
 scrollbar-width: none;
-
   display: flex;
-
-
-  height: fit-content;
-  max-height: 80vh;
+  height:fit-content;
+  max-height: 86vh;
+  
 }
 
 
@@ -46,16 +45,13 @@ scrollbar-width: none;
 
 
 
-@media (min-width: 768px) {
+
+
+
+@media only screen and (min-device-width: 767px) and (max-device-width: 1024px) {
  
-
 }
 
-
-@media (min-width: 1024px) {
-  .create___container {
- min-height: 900px;
-  }
+@media (min-width: 1025px) {
+ 
 }
-
-

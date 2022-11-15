@@ -4,7 +4,7 @@ import { RecipeLayout } from "../components/RecipeLayout";
 import { useFetchRecipe } from "../hooks/useFetchRecipe";
 import { useFetchUser } from "../hooks/useFetchUser";
 
-import "./Profil.scss";
+
 import "./UserProfile.scss";
 export const UserProfile = () => {
   const seeProfile = useSelector((store) => store.ui.seeProfile);
@@ -47,12 +47,12 @@ export const UserProfile = () => {
           ""
         )}
       </section>
-      <section className="profil_grid___Container">
+      <section className="userprofil_grid___Container">
         <section
           className={
             data && data.length <= 1
-              ? "oneRecipteWidth"
-              : "profil_grid___Content"
+              ? "userprofil_oneRecipteWidth"
+              : "userprofil_grid___Content"
           }
         >
           {data && data.length >= 1 ? (

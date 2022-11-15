@@ -4,14 +4,17 @@
 
 
 .createRecipes___form {
+  font-size: clamp(15px, 2vw, 20px);
   h2 {
     text-shadow: 2px 2px 3px var(--shadow);
-    font-size: clamp(20px, 5vw, 30px);
-   
+    font-size: clamp(15px, 2vw, 25px);
+   margin: 2% 0;
+   width: 100%;
   }
 
-height: 100%;
+
 width: 100%;
+
 
 
 }
@@ -42,7 +45,7 @@ width: 100%;
 
 .createRecipes___error_container{
 
-margin: 0px 0 5% 0 ;
+margin: 0px 0 2% 0 ;
 width: 100%;
 height: 7%;
 
@@ -58,15 +61,15 @@ height: 7%;
   flex-direction: column;
   justify-content: space-around;
   width: 100%;
-  height: 100%;
+  font-size: 85%;
 
   input,
   textarea,
   select,
   option {
     height: clamp(30%, 2vw, 40%);
-    font-size: small;
-    margin: 15px 0;
+    font-size: 100%;
+    margin: 2% 0;
     background-color: var(--input);
     color: var(--text-primary);
     text-shadow: 0px 1px 3px rgb(27, 27, 27);
@@ -104,7 +107,7 @@ height: 7%;
 
   .description_input {
     text-align: start;
-    height: clamp(50px, 2vw, 130px);
+    height: clamp(90px, 2vw, 120px);
     resize: none;
     scrollbar-width: none;
   }
@@ -118,18 +121,20 @@ height: 7%;
     align-items: center;
     text-align: end;
     width: 100%;
+    font-size: 70%;
     height: 5px;
+    
+    p{
+      margin: 0 ;
+
+    }
   }
-  .description_counter p {
-    margin: 0 auto;
-    padding: 0 auto;
-    width: 50px;
-  }
+  
 
   .ingredients_p {
     margin: 0 0 10px 0;
     text-decoration: underline;
-    font-size: small;
+    font-size: 85%;
     text-shadow: 1px 1px 1px rgb(27, 27, 27);
     font-weight: 500;
   }
@@ -139,6 +144,7 @@ height: 7%;
     min-height: 50px;
     overflow: scroll;
     scrollbar-width: none;
+    font-size: 100%;
   }
 
   .addInputs::-webkit-scrollbar {
@@ -149,10 +155,10 @@ height: 7%;
     display: flex;
     justify-content: space-between;
     align-items: center;
+  
 
     input,
     .measure {
-      height: clamp(16px, 4vw, 36px);
       width: 30%;
       margin: 0;
       margin-right: 10px;
@@ -175,7 +181,7 @@ height: 7%;
         display: flex;
         align-items: center;
         justify-content: center;
-        height: clamp(16px, 4vw, 36px);
+        height: clamp(30%, 2vw, 40%);
         width: 45%;
         font-size: 25px;
         border-radius: 5px;
@@ -198,12 +204,18 @@ height: 7%;
   justify-content: space-between;
   align-items: center;
   width: 100%;
-  height: 5vh;
+  height: 90px;
+  margin: 1% 0;
+  
 
-  button {
+  .general_button {
+    width: 15vw;
+    min-width: 150px;
     max-width: 200px;
+    height: clamp(5px, 2vw, 10px);
+    font-size: 80%;
   }
-  button:hover {
+  .general_button:hover {
     transform: scale(95%);
   }
 }

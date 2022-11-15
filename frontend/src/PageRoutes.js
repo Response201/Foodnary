@@ -19,7 +19,7 @@ export const PageRoutes = () => {
     <>
       <Routes>
        
-        <Route exact path="/" element={<Home />}></Route>
+        <Route exact path="/" element={<Home/>}></Route>
         <Route exact path="/home" element={<Home___profile/>}></Route>
         <Route exact path="/signin" element={<SignInOrUp />}></Route>
         <Route exact path="/profile" element={<Profile />}></Route>

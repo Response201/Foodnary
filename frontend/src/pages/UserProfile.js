@@ -16,11 +16,6 @@ export const UserProfile = () => {
   const follow = following.map((e) => e.username === seeProfile);
 
 
-
-
-
-
-
   useFetchUser({ url });
 
   useEffect(() => {

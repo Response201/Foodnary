@@ -26,9 +26,10 @@ export const OneRecipe = () => {
 
   /* funkction to get to an userpage */
   const onClickUser = () => {
+    if( user !== data.username){
     dispatch(ui.actions.setPath("user"));
     dispatch(ui.actions.setSeeProfile(data.username));
-    navigate("/user");
+    navigate("/user");}
   };
 
   useEffect(() => {
@@ -73,7 +74,7 @@ export const OneRecipe = () => {
                   </i>
                   <p> {data.hearts} </p>
                 </div>
-                <p onClick={onClickUser} className="oneRecipe___username">
+                <p   onClick={onClickUser} className={user !== data.username ?"oneRecipe___username":''}>
                   {" "}
                   {data.username}{" "}
                 </p>

@@ -54,7 +54,7 @@ padding: 0px;
 .userProfile___header_btn {
   width: 98%;
   height: 100px;
-  max-width: 550px;
+  max-width: 400px;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -67,26 +67,30 @@ padding: 0px;
   button {
     font-size:150%;
    
-  }
+  }}
 
 .userProfile___no_btn{
 
-  width: 100%;
+  width: 98%;
+  height: 100px;
   max-width: 400px;
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: space-between;
 
   h2 {
-   
-    font-size:50%;
+    
+    font-size:200%;
   }
 
-}
+  button {
+    font-size:150%;
+
+}}
 
 
 
-}
+
 
 
 @media (min-width:1024px) {

@@ -32,7 +32,7 @@ export const UserProfile = () => {
 
   return (
     <div className="userProfile___container">
-      <section className={follow.includes(true) ?"userProfile___header_btn" : "userProfile___no_btn"}>
+      <section className={ token ?"userProfile___header_btn" : "userProfile___no_btn"}>
         <h2>{seeProfile}</h2>
         {token && username ? (
           <button onClick={onClickfollow}>

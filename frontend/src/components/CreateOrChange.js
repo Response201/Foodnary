@@ -31,6 +31,7 @@ export const CreateOrChange = () => {
   const recipeId = useSelector((store) => store.recipes.id);
   const getimage = useSelector((store) => store.recipes.image);
   const errormessage = useSelector((store) => store.ui.message);
+  const showCropper = useSelector((store) => store.ui.showCropper);
   const [newImage, setnewImage] = useState("");
   const [next, setNext] = useState(false);
   const [submit, setSubmit] = useState(false);
@@ -158,12 +159,14 @@ export const CreateOrChange = () => {
     ]);
   };
 
+
+
   return (
     <>
    
    
       <form className="createRecipes___form">
-        <section className="createRecipes___header_container">
+        <section className={showCropper ?  "hide": "createRecipes___header_container"}>
           <h2>{getHeader}</h2>{" "}
           {getHeader === "Change recipe" ? (
             <i onClick={onClickDelete} className="createRecipes___icon">
@@ -174,10 +177,10 @@ export const CreateOrChange = () => {
             ""
           )}
         </section>
-        <div className="createRecipes___image"> 
+        <div className={!showCropper ?  "createRecipes___image": ""}> 
           <ImageInput setNext={setNext} setnewImage={setnewImage} style={{heigth:'100%'}} />
           </div>
-        <section className="createRecipes___inputContainer">
+        <section  className={showCropper ?  "hide": "createRecipes___inputContainer"}>
        
           <section className="createRecipes___error_container">
             {errormessage.includes("Error!") ? (

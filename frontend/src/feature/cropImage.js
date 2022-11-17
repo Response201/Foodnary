@@ -1,3 +1,5 @@
+
+
  /*eslint-disable */
  function getRadianAngle(degreeValue) {
   return (degreeValue * Math.PI) / 180
@@ -44,5 +46,7 @@ export default async function getCroppedImg(imageSrc, pixelCrop) {
       resolve(file)
      
     }, 'image/jpeg')
+    
   })
+ 
 } 

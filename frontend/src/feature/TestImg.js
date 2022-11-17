@@ -2,45 +2,38 @@
 import React, { useState, useCallback } from "react";
 import Cropper from "react-easy-crop";
 import "./TestImg.scss";
- import getCroppedImg from "./cropImage"; 
-export const TestImg = ({ preview, setImage, setImageCopped, image  }) => {
-
-
-
-
-  const [crop, setCrop] = useState({ x: 0, y: 0 })
-  const [zoom, setZoom] = useState(1)
-  const [croppedAreaPixels, setCroppedAreaPixels] = useState(null)
-  const [croppedImage, setCroppedImage] = useState(null)
-
+import getCroppedImg from "./cropImage";
+import { useDispatch } from "react-redux";
+import { ui } from "../reducers/ui";
+export const TestImg = ({ preview, setImage, setImageCopped, image }) => {
+  const [crop, setCrop] = useState({ x: 0, y: 0 });
+  const [zoom, setZoom] = useState(1);
+  const [croppedAreaPixels, setCroppedAreaPixels] = useState(null);
+  const [croppedImage, setCroppedImage] = useState(null);
+  const dispatch = useDispatch();
   const onCropComplete = useCallback((croppedArea, croppedAreaPixels) => {
-    setCroppedAreaPixels(croppedAreaPixels)
-  }, [])
+    setCroppedAreaPixels(croppedAreaPixels);
+  }, []);
 
+  const showCroppedImage = useCallback(
+    async (e) => {
+      e.preventDefault();
+      try {
+        const croppedImage = await getCroppedImg(preview, croppedAreaPixels);
 
-
-  const showCroppedImage = useCallback(async (e) => {
-    e.preventDefault()
-    try {
-      const croppedImage = await getCroppedImg(
-        preview,
-        croppedAreaPixels,
-        
-      )
-    
-      setCroppedImage(croppedImage)
-      setImageCopped(croppedImage)
-    } catch (e) {
-      console.error(e)
-    }
-  }, [croppedAreaPixels])
-
- 
-  
+        setCroppedImage(croppedImage);
+        setImageCopped(croppedImage);
+      } catch (e) {
+        console.error(e);
+      }
+    },
+    [croppedAreaPixels]
+  );
 
   const ImageNull = (e) => {
     e.preventDefault();
     setImage(null);
+    dispatch(ui.actions.setShowCropper(false));
   };
 
   return (
@@ -76,7 +69,6 @@ export const TestImg = ({ preview, setImage, setImageCopped, image  }) => {
           {" "}
           X{" "}
         </button>
-       
       </div>
     </div>
   );

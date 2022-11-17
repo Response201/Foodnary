@@ -14,6 +14,7 @@ export const ui = createSlice({
     update:false,
     showWelcomePage: true,
     signInOrUp:false,
+    showCropper:false,
   },
   reducers: {
     setLoading: (state, action) => {
@@ -54,6 +55,9 @@ state.next = action.payload;
     },
     setSignInOrUp: (state, action) => {
       state.signInOrUp = action.payload;
+    },
+    setShowCropper: (state, action) => {
+      state.showCropper = action.payload;
     },
 
   }

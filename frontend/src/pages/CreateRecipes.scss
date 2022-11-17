@@ -32,10 +32,28 @@ overflow-y: hidden;
   overflow-y: scroll;
 scrollbar-width: none;
   display: flex;
-  height:fit-content;
+  height: fit-content;
   max-height: 86vh;
-  
+  position: absolute;
 }
+
+
+
+.createRecipes___content_crooper{
+
+
+  background-color: var(--primary-one);
+  box-shadow: 5px 5px 5px var(--shadow), inset 2px 2px 5px var(--primary-two),
+    inset -2px -5px 5px var(--shadow);
+    border: 1px solid var(--shadow);
+  width: 90vw;
+scrollbar-width: none;
+  display: flex;
+  height: 80vh;
+  position: absolute;
+}
+
+
 
 
 

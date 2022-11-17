@@ -8,7 +8,6 @@ import "./ImageInput.scss";
 import axios from "axios";
 import { TestImg } from "./TestImg";
 
-
 export const ImageInput = ({ setNext, setnewImage }) => {
   const token = useSelector((store) => store.user.token);
   const getfile = useSelector((store) => store.recipes.uploadFile);
@@ -19,6 +18,7 @@ export const ImageInput = ({ setNext, setnewImage }) => {
   const [preview, setPreview] = useState("");
   const [imageCopped, setImageCopped] = useState();
   const [placeholderImg, setPlaceholderImg] = useState("");
+  const showCropper = useSelector((store) => store.ui.showCropper);
   const dispatch = useDispatch();
   const [path, setPath] = useState("");
   const handleChange = (e) => {
@@ -30,6 +30,7 @@ export const ImageInput = ({ setNext, setnewImage }) => {
     if (getimage) {
       setPlaceholderImg(getimage);
     }
+    dispatch(ui.actions.setShowCropper(false));
   }, []);
 
   useEffect(() => {
@@ -54,18 +55,28 @@ export const ImageInput = ({ setNext, setnewImage }) => {
         };
         reader.readAsDataURL(image);
       }
+      dispatch(ui.actions.setShowCropper(true));
     } else {
       setImage(null);
     }
   }, [image]);
 
   useEffect(() => {
-    if (imageCopped) {
+    if (imageCopped !== undefined) {
+      /* set a new placeholder image */
+      var reader = new FileReader();
+      reader.readAsDataURL(imageCopped);
+      reader.onloadend = function () {
+        const base64data = reader.result;
+        setPlaceholderImg(base64data);
+      };
+
       setPath(`recipe/${getRecipeId}`);
       let formData = new FormData();
       formData.append("path", path);
       formData.append("file", imageCopped);
       UplaodImages(formData, path, token);
+      dispatch(ui.actions.setShowCropper(false));
     }
   }, [imageCopped, setImageCopped]);
 
@@ -93,6 +104,7 @@ export const ImageInput = ({ setNext, setnewImage }) => {
           }
         );
         dispatch(recipes.actions.setUploadFile(false));
+        dispatch(ui.actions.setShowCropper(false));
         return setResponse(data);
       } catch (error) {
         return setResponse(error.response.data.error);
@@ -100,8 +112,8 @@ export const ImageInput = ({ setNext, setnewImage }) => {
   };
 
   return (
-    <section className="createRecipes___image">
-      {image ? (
+    <>
+      {showCropper ? (
         <>
           <TestImg
             preview={preview}
@@ -111,31 +123,28 @@ export const ImageInput = ({ setNext, setnewImage }) => {
           />
         </>
       ) : (
-        <label
-          class="label"
-         
-        >
+        <label class="label">
           <input
             onChange={handleChange}
             multiple={false}
             type="file"
             accept="image/*"
           />
-          <div className="placeholder___img" style={{
-            backgroundRepeat: "no-repeat",
-            backgroundImage: `url(${placeholderImg})`,
-            backgroundSize: "cover",
-            backgroundPosition: "center center",
-            opacity: "0.3"
-          }} />
-          <span
-          className="text___pick_newImg"
-            
-          >
-            {image ? '' : "click to pick a new image..."}
+          <div
+            className="placeholder___img"
+            style={{
+              backgroundRepeat: "no-repeat",
+              backgroundImage: `url(${placeholderImg})`,
+              backgroundSize: "cover",
+              backgroundPosition: "center center",
+              opacity: "0.3"
+            }}
+          />
+          <span className="text___pick_newImg">
+            {image ? "" : "click to pick a new image..."}
           </span>
         </label>
       )}
-    </section>
+    </>
   );
 };

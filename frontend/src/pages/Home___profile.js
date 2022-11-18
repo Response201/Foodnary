@@ -4,20 +4,31 @@ import { useNavigate } from "react-router";
 import { RecipeLayout } from "../components/RecipeLayout";
 import { useFetchRecipe } from "../hooks/useFetchRecipe";
 import { recipes } from "../reducers/recipes";
-import defaultImgRecip from '../assets/image/annie-spratt-R3LcfTvcGWY-unsplash.jpg'
+import defaultImgRecip from "../assets/image/annie-spratt-R3LcfTvcGWY-unsplash.jpg";
 import "./home___profil.scss";
 import "./Profil.scss";
 const Home___profile = () => {
   const [url, setUrl] = useState("");
-  const { data } = useFetchRecipe({ url });
+  const { data, next } = useFetchRecipe({ url });
+  const [array, setArray] = useState([]);
 
+  const dispatch = useDispatch();
+  const navigate = useNavigate();
 
-const dispatch = useDispatch()
-const navigate = useNavigate()
+  useEffect(() => {
+    setUrl(`${process.env.REACT_APP_URL}/userRecipe`);
+  }, [next]);
+
+ 
 
   useEffect(() => {
     setUrl(`${process.env.REACT_APP_URL}/followRecipts`);
-  }, []);
+    if (url.includes("userRecipe") || url.includes("likeRecipe")) {
+    } else if (data) {
+      console.log(url);
+      setArray([...data]);
+    }
+  }, [data]);
 
   const onClick = () => {
     dispatch(recipes.actions.setTitle("Title"));
@@ -32,34 +43,39 @@ const navigate = useNavigate()
     dispatch(recipes.actions.setMainCategory("Main category"));
     dispatch(recipes.actions.setSubCatergory("Sub category"));
     dispatch(recipes.actions.setHeader("Create recipe"));
-  
+
     navigate("/create");
   };
 
-  const onClickDiscover = () => {}
-
-
-
+  const onClickDiscover = () => {};
 
   return (
     <article className="recipes__container">
       <section className="recipes__side">
-      <button className="creat_btn_page" style={{maxWidth:'200px', maxHeight:'70px'}} onClick={onClick} >
-              Create recipe
-            </button>
+        <button
+          className="creat_btn_page"
+          style={{ maxWidth: "200px", maxHeight: "70px" }}
+          onClick={onClick}
+        >
+          Create recipe
+        </button>
       </section>
       <section className="recipes__content">
         {data &&
-          data.map((e) => (
+          array.map((e) => (
             <>
-              <RecipeLayout item={e} />
+              <RecipeLayout item={e} setUrl={setUrl} />
             </>
           ))}
       </section>
       <section className="recipes__side hidde">
-      <button className="creat_btn_page" style={{maxWidth:'200px', maxHeight:'70px'}} onClick={onClickDiscover} >
-      Discover New Creators
-            </button>
+        <button
+          className="creat_btn_page"
+          style={{ maxWidth: "200px", maxHeight: "70px" }}
+          onClick={onClickDiscover}
+        >
+          Discover New Creators
+        </button>
       </section>
     </article>
   );

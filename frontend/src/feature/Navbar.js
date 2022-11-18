@@ -31,6 +31,11 @@ export const Navbar = () => {
             <li className="nav_li">
               <Search />
             </li>
+            <li className="nav_li link_hoover">
+              <Link className="nav_a"  to="/insparation">
+              Insparation
+              </Link>
+              </li>
 
             <li className="nav_li link_hoover">
               <Link onClick={onClickPath} className="nav_a" to="/profile">
@@ -51,6 +56,11 @@ export const Navbar = () => {
             <li className="nav_li">
               <Search />
             </li>
+            <li className="nav_li link_hoover">
+              <Link className="nav_a"  to="/insparation">
+              Insparation
+              </Link>
+              </li>
 
             <li className="nav_li link_hoover">
               <Link className="nav_a" onClick={onClickPath} to="/signin">

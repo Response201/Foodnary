@@ -124,7 +124,7 @@ export const useFetchRecipe = ({ url }) => {
       fetchData({ options });
     }
 
-    if (url.includes("mainAndsub" || "mainCategory" || "subCatergory")) {
+    if (url.includes("mainAndsub") || url.includes("mainCategory") || url.includes("subCatergory")) {
       const options = {
         method: "POST",
         headers: {

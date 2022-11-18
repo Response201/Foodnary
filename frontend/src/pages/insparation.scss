@@ -1,0 +1,53 @@
+.insparation_container {
+  height: 100vh;
+  overflow-y: hidden;
+  font-size: large;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+}
+
+/* filter section */
+
+.insparation_filter_container {
+  height: 15%;
+  max-height: 50px;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  padding: 10px 0;
+}
+
+.insparation_filter_content {
+  width: 100%;
+  max-width: 500px;
+
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+/* display recipes */
+
+.insparation_recipe_container {
+  width: 98%;
+  height: 85%;
+  overflow-y: scroll;
+  display: grid;
+  margin: 1% auto;
+  align-items: flex-start;
+  scrollbar-width: none;
+  margin-bottom: 50px;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+
+  gap: 2vw;
+  aspect-ratio: 16/9;
+}
+.insparation_recipe_container::-webkit-scrollbar {
+  display: none; /* for Chrome, Safari, and Opera */
+}
+
+.insparation_recipe_content {
+  aspect-ratio: 16/12;
+  margin-bottom: 50px;
+}

@@ -13,8 +13,8 @@
     justify-content: space-between;
     list-style-type: none;
     padding: 0 2px 0 0px;
-    width: 75%;
-    max-width: 500px;
+    width: 80%;
+    max-width: 550px;
 
     .nav_a {
       border: 5px double var(--primary-two);
@@ -22,8 +22,8 @@
       background-color: var(--nav_search_switch);
       padding: 1px 4px 2px 4px;
       text-decoration: none;
-      font-size: clamp(10px, 3vh, 22px);
-      font-weight: 500;
+      font-size: clamp(10px, 2vh, 22px);
+      font-weight: 400;
       text-shadow: 0px 0px 0px var(--pink);
       color: var(--text-primary);
       cursor: default;

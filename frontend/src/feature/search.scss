@@ -9,6 +9,7 @@
   color: var(--primary-one);
   width: 100px;
   margin-top: clamp(-3px, 3vw, -5px);
+  padding-right: 5px;
 }
 
 .search > div {
@@ -19,7 +20,7 @@
 .search > div:after {
   content: "";
   background-color: var(--nav_search_switch);
-  width: 4px;
+  width: 5px;
   height: clamp(14px, 1vw, 17px);
   position: absolute;
   top: clamp(15px, 3vw, 21px);

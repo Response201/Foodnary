@@ -12,7 +12,8 @@ import { ChangePassword } from "./pages/ChangePassword";
 import { CreateRecipes } from "./pages/CreateRecipes";
 import { UserProfile } from "./pages/UserProfile";
 import {OneRecipe} from './pages/OneRecipe'
-import Home___profile from "./pages/Home___profile";
+import Homeprofile from "./pages/Home___profile";
+import { Insparation } from "./pages/Insparation";
 
 export const PageRoutes = () => {
   return (
@@ -20,7 +21,7 @@ export const PageRoutes = () => {
       <Routes>
        
         <Route exact path="/" element={<Home/>}></Route>
-        <Route exact path="/home" element={<Home___profile/>}></Route>
+        <Route exact path="/home" element={<Homeprofile/>}></Route>
         <Route exact path="/signin" element={<SignInOrUp />}></Route>
         <Route exact path="/profile" element={<Profile />}></Route>
         <Route exact path="/user" element={<UserProfile />}></Route>
@@ -28,6 +29,7 @@ export const PageRoutes = () => {
         <Route exact path="/activate/:token" element={<Activate />}></Route>
         <Route exact path="/reset" element={<ResetPassword />}></Route>
         <Route exact path="/change" element={<ChangePassword />}></Route>
+        <Route exact path="/insparation" element={<Insparation />}></Route>
         <Route exact path="/create" element={<CreateRecipes />}></Route>
         <Route path="*" element={<PageNotFound />}></Route>
       </Routes>

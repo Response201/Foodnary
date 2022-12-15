@@ -55,7 +55,7 @@ export const TestImg = ({ preview, setImage, setImageCopped, image }) => {
           type="range"
           value={zoom}
           min={1}
-          max={3}
+          max={10}
           step={0.1}
           aria-labelledby="Zoom"
           onChange={(e) => {

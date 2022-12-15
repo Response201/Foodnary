@@ -20,9 +20,10 @@ export const TestImg = ({ preview, setImage, setImageCopped, image }) => {
       e.preventDefault();
       try {
         const croppedImage = await getCroppedImg(preview, croppedAreaPixels);
-
-        setCroppedImage(croppedImage);
+       
         setImageCopped(croppedImage);
+        setCroppedImage(croppedImage);
+
       } catch (e) {
         console.error(e);
       }

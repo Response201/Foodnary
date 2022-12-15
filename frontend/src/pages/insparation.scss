@@ -36,9 +36,11 @@
   display: grid;
   margin: 1% auto;
   align-items: flex-start;
+  justify-content: space-between;
   scrollbar-width: none;
   margin-bottom: 50px;
-  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(350px, 500px));
+
 
   gap: 2vw;
   aspect-ratio: 16/9;

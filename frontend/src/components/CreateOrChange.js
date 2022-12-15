@@ -76,14 +76,12 @@ export const CreateOrChange = () => {
     ) {
     } else {
       if (getHeader === "Create recipe" && next) {
-        setUrl(`${process.env.REACT_APP_URL}/createRecipe`);
         dispatch(recipes.actions.setUploadFile(true));
-       
+        setUrl(`${process.env.REACT_APP_URL}/createRecipe`);
         setTimeout(() => {
           navigate("/profile");
         }, 5000);
-      } else if (getHeader === "Create recipe" && !next) {
-        dispatch(recipes.actions.setImage(defaultImgRecip));
+      } else if (getHeader === "Create recipe" && !next  ) {
         setUrl(`${process.env.REACT_APP_URL}/createRecipe`);
         setTimeout(() => {
           navigate("/profile");
@@ -108,7 +106,7 @@ export const CreateOrChange = () => {
         navigate("/profile");
       }, 3000);
     }
-  }, [next, setnewImage, getimage, recipeId, submit, errormessage]);
+  }, [next, newImage, getimage, recipeId, submit, errormessage]);
 
   /* remove text if its same as x 'name' */
 

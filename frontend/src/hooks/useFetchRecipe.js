@@ -23,6 +23,11 @@ export const useFetchRecipe = ({ url }) => {
   const seeProfile = useSelector((store) => store.ui.seeProfile);
   const dispatch = useDispatch();
 
+
+console.log(image)
+
+
+
   useEffect(() => {
     const fetchData = async ({ options }) => {
       try {

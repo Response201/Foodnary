@@ -63,7 +63,6 @@ export const Insparation = () => {
     setSub("sub");
   }, [main]);
 
-
   useEffect(() => {
     fetch(updateUrl, options)
       .then((response) => response.json())
@@ -72,8 +71,6 @@ export const Insparation = () => {
         console.log("error");
       });
   }, [data, options]);
-
-
 
   useEffect(() => {
     setUrl(`${process.env.REACT_APP_URL}/userRecipe`);
@@ -170,8 +167,18 @@ export const Insparation = () => {
             ))}
           </>
         ) : (
-          <section style={{height:'40vh',width:'100%', display:'flex', justifyContent:'center', alignItems:'center'}}>
-            <p style={{height:'50px' }}>{response && response.message ? `${response.message}` : ""}</p>
+          <section
+            style={{
+              height: "40vh",
+              width: "100vw",
+              display: "flex",
+              justifyContent: "center",
+              alignItems: "center"
+            }}
+          >
+            <p style={{ height: "50px" }}>
+              {response && response.message ? `${response.message}` : ""}
+            </p>
           </section>
         )}
       </section>

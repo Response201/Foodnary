@@ -37,7 +37,7 @@ export const ImageInput = ({ setNext, setnewImage }) => {
   useEffect(() => {
     if (image) {
      
-      if (image.size > 1024 * 1024 * 3) {
+      if (image.size >= 1024 * 1024 * 1) {
         dispatch(ui.actions.setMessage("Error! Image size is to large"));
         setTimeout(() => {
           dispatch(ui.actions.setMessage(""));
@@ -56,8 +56,9 @@ export const ImageInput = ({ setNext, setnewImage }) => {
           setPreview(reader.result);
         };
         reader.readAsDataURL(image);
+        dispatch(ui.actions.setShowCropper(true));
       }
-      dispatch(ui.actions.setShowCropper(true));
+      
     } else if(!image){
       setImage(null);
     }
